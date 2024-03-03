@@ -13,6 +13,7 @@
 		D58980952B913FE400D3EBEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980942B913FE400D3EBEB /* Preview Assets.xcassets */; };
 		D589809D2B91409500D3EBEB /* QRCodeCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589809C2B91409500D3EBEB /* QRCodeCam.swift */; };
 		D589809F2B91411100D3EBEB /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589809E2B91411100D3EBEB /* QRCodeScannerView.swift */; };
+		D58980AD2B92179E00D3EBEB /* PrinterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980AC2B92179E00D3EBEB /* PrinterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D589809C2B91409500D3EBEB /* QRCodeCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeCam.swift; sourceTree = "<group>"; };
 		D589809E2B91411100D3EBEB /* QRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
 		D58980A02B91476C00D3EBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D58980AC2B92179E00D3EBEB /* PrinterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				D589809C2B91409500D3EBEB /* QRCodeCam.swift */,
 				D589809E2B91411100D3EBEB /* QRCodeScannerView.swift */,
+				D58980AC2B92179E00D3EBEB /* PrinterManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58980AD2B92179E00D3EBEB /* PrinterManager.swift in Sources */,
 				D58980902B913FE300D3EBEB /* ContentView.swift in Sources */,
 				D589808E2B913FE300D3EBEB /* GonepteryxApp.swift in Sources */,
 				D589809F2B91411100D3EBEB /* QRCodeScannerView.swift in Sources */,

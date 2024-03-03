@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 import AVFoundation
+import CoreImage.CIFilterBuiltins
 
 //Verwendung zusammen mit QRC ScannerView!!!!
 
@@ -18,6 +19,7 @@ struct QRCCam: View {
 
     var body: some View {
         VStack {
+            
             if let image = image {
                 Image(uiImage: image)
                     .resizable()
@@ -25,8 +27,43 @@ struct QRCCam: View {
                 Button("QR Code auslesen") {
                     qrCodeContent = readQRCode(from: image)
                 }
+                
+                Button(action: {
+                    PrinterManager.shared.printImage(generateQRCodeImage(qrCodeContent ?? "I like banana split")!)
+                }){
+                    Text("drucken")
+                        .font(.title2)
+                        .foregroundStyle(.white)
+                        .background(Capsule()
+                            .foregroundStyle(LinearGradient(colors: [.blue, .indigo], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                        .padding(3)
+                        .background(Capsule()
+                            .foregroundStyle(LinearGradient(colors: [.white, .gray], startPoint: .topTrailing, endPoint: .bottomLeading)))
+                        .padding(.horizontal, 5)
+                    
+                }
+                
+                Button(action: {
+                    if let qrCodeImage = generateQRCodeImage(qrCodeContent ?? "I like banana split") {
+                        saveToLibrary(image: qrCodeImage)
+                    }
+                }) {
+                    Text("Bild speichern")
+                }
                 if let qrCodeContent = qrCodeContent {
                     Text("QR Code Inhalt: \(qrCodeContent)")
+                    Button(action: {
+                        showingImagePicker.toggle()
+                    }){
+                        Text("neu")
+                            .background(Capsule()
+                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/))
+                            .foregroundColor(.white)
+                            .padding(4)
+                            .background(Capsule()
+                                .foregroundStyle(LinearGradient(colors: [.white, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
+                            .shadow(radius: 4)
+                    }
                 }
             } else {
                 Button("Kamera öffnen") {
@@ -55,6 +92,25 @@ struct QRCCam: View {
             }
         }
         return nil
+    }
+    
+    func generateQRCodeImage(_ qrCodeString: String) -> UIImage? {
+
+        let data = Data(qrCodeString.utf8)
+        let filter = CIFilter.qrCodeGenerator()
+        filter.setValue(data, forKey: "inputMessage")
+
+        guard let outputImage = filter.outputImage,
+              let cgImage = CIContext().createCGImage(outputImage, from: outputImage.extent) else {
+            return nil
+        }
+
+        let uiImage = UIImage(cgImage: cgImage)
+        return uiImage
+    }
+    
+    func saveToLibrary(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 }
 

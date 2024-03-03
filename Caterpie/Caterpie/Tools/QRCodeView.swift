@@ -11,9 +11,14 @@ import Photos
 struct QRCodeView: View {
     @State var inputString: String
     let filter = CIFilter.qrCodeGenerator()
+    let pm = PrinterManager.shared
+    @State var printerName  = ""
 
     var body: some View {
         VStack {
+            
+            TextField("I'd like to have a banana split", text: $inputString)
+            
             if let qrCodeImage = generateQRCodeImage() {
                 Image(nsImage: qrCodeImage)
                     .resizable()
@@ -22,6 +27,25 @@ struct QRCodeView: View {
             } else {
                 Text("Failed to generate QR code")
                     .foregroundColor(.red)
+            }
+            
+            Button(action: {
+                guard let image = generateQRCodeImage() else {
+                    return
+                }
+                pm.printString(string: inputString)
+                
+            }){
+                
+                Text("print")
+            }.buttonStyle(.borderedProminent)
+            
+            ForEach(pm.listPrinters(), id: \.self){printer in
+                Text(printer)
+                    .foregroundStyle(printerName == printer ? Color.green : Color.white)
+                    .onTapGesture {
+                        printerName = printer
+                    }
             }
         }
         .padding()
@@ -63,6 +87,16 @@ struct QRCodeView: View {
                 }
             }
         }
+    }
+    
+    
+    func convertImageToJPEGData(image: NSImage) -> Data? {
+        guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
+            return nil
+        }
+        let bitmapImageRep = NSBitmapImageRep(cgImage: cgImage)
+        let jpegData = bitmapImageRep.representation(using: .jpeg, properties: [:])
+        return jpegData
     }
 }
 

@@ -2,10 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>To store qrCode images</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Needed for scanning QR-Codes and EAN&apos;s</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Need bluetooth to connect with printer</string>
 	<key>CFBundleDocumentTypes</key>
 	<array/>
 </dict>

@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */; };
 		D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589806F2B91377600D3EBEB /* CaterpieApp.swift */; };
 		D58980722B91377600D3EBEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980712B91377600D3EBEB /* ContentView.swift */; };
 		D58980742B91377700D3EBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980732B91377700D3EBEB /* Assets.xcassets */; };
 		D58980772B91377700D3EBEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980762B91377700D3EBEB /* Preview Assets.xcassets */; };
 		D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589807F2B9138AC00D3EBEB /* QRCodeView.swift */; };
+		D58980A22B91DB0800D3EBEB /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980A12B91DB0800D3EBEB /* BluetoothManager.swift */; };
+		D58980A52B91DB8100D3EBEB /* BTDeviceChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980A42B91DB8100D3EBEB /* BTDeviceChoiceView.swift */; };
+		D58980AB2B9210E100D3EBEB /* PrinterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980AA2B9210E100D3EBEB /* PrinterManager.swift */; };
+		D58980B02B9459BD00D3EBEB /* BluetoothPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothPrinterRowView.swift; sourceTree = "<group>"; };
 		D589806C2B91377600D3EBEB /* Caterpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caterpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589806F2B91377600D3EBEB /* CaterpieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieApp.swift; sourceTree = "<group>"; };
 		D58980712B91377600D3EBEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +28,11 @@
 		D58980762B91377700D3EBEB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D58980782B91377700D3EBEB /* Caterpie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caterpie.entitlements; sourceTree = "<group>"; };
 		D589807F2B9138AC00D3EBEB /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		D58980A12B91DB0800D3EBEB /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		D58980A42B91DB8100D3EBEB /* BTDeviceChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTDeviceChoiceView.swift; sourceTree = "<group>"; };
+		D58980A62B91E08000D3EBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D58980AA2B9210E100D3EBEB /* PrinterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterManager.swift; sourceTree = "<group>"; };
+		D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D51440922B94692200F2A8DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D58980632B91377600D3EBEB = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +73,9 @@
 		D589806E2B91377600D3EBEB /* Caterpie */ = {
 			isa = PBXGroup;
 			children = (
+				D58980A72B91ECEB00D3EBEB /* Models */,
+				D58980A62B91E08000D3EBEB /* Info.plist */,
+				D58980A32B91DB4B00D3EBEB /* BluetoothDeviceChoice */,
 				D589807E2B91388E00D3EBEB /* Tools */,
 				D589806F2B91377600D3EBEB /* CaterpieApp.swift */,
 				D58980712B91377600D3EBEB /* ContentView.swift */,
@@ -75,9 +97,36 @@
 		D589807E2B91388E00D3EBEB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D58980AE2B9459A500D3EBEB /* Models */,
 				D589807F2B9138AC00D3EBEB /* QRCodeView.swift */,
+				D58980A12B91DB0800D3EBEB /* BluetoothManager.swift */,
+				D58980AA2B9210E100D3EBEB /* PrinterManager.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		D58980A32B91DB4B00D3EBEB /* BluetoothDeviceChoice */ = {
+			isa = PBXGroup;
+			children = (
+				D51440922B94692200F2A8DE /* Models */,
+				D58980A42B91DB8100D3EBEB /* BTDeviceChoiceView.swift */,
+			);
+			path = BluetoothDeviceChoice;
+			sourceTree = "<group>";
+		};
+		D58980A72B91ECEB00D3EBEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D58980AE2B9459A500D3EBEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +201,12 @@
 			files = (
 				D58980722B91377600D3EBEB /* ContentView.swift in Sources */,
 				D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */,
+				D58980A52B91DB8100D3EBEB /* BTDeviceChoiceView.swift in Sources */,
+				D58980A22B91DB0800D3EBEB /* BluetoothManager.swift in Sources */,
 				D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */,
+				D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */,
+				D58980B02B9459BD00D3EBEB /* BluetoothPrinter.swift in Sources */,
+				D58980AB2B9210E100D3EBEB /* PrinterManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +345,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Caterpie/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,6 +375,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Caterpie/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

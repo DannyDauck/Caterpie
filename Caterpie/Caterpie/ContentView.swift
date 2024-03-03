@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var btManager = BluetoothManager.shared
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack{
+            
+            HStack {
+                QRCodeView(inputString: "I'd like to have a banana split")
+                BTDeviceChoiceView(bluetoothManager: btManager)
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
