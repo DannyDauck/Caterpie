@@ -51,14 +51,12 @@ class PrinterManager {
     }
     
     func listPrinters() -> [String]{
-        
-        
-        
         return NSPrinter.printerNames
     }
     
     func listOccupiedUSBPorts() {
         // Suche nach allen USB-Geräten
+        
         let matchingDict = IOServiceMatching(kIOUSBDeviceClassName)
         var iterator: io_iterator_t = 0
         let result = IOServiceGetMatchingServices(kIOMasterPortDefault, matchingDict, &iterator)
@@ -70,7 +68,7 @@ class PrinterManager {
         
         var device: io_object_t = 0
         while true {
-            // Holen Sie sich die Geräteinformationen
+            //Geräteinformationen abfragen
             device = IOIteratorNext(iterator)
             if device == 0 {
                 print("device is 0")
@@ -87,42 +85,4 @@ class PrinterManager {
         }
         IOObjectRelease(iterator)
     }
-    
-    func printString(string: String) {
-        // Erstellen Sie eine Instanz von NSPrintInfo
-        let printInfo = NSPrintInfo.shared
-        
-        // Konfigurieren Sie das Druckinfo-Objekt
-        printInfo.horizontalPagination = .fit
-        printInfo.verticalPagination = .fit
-        
-        // Erstellen Sie eine NSTextView mit dem String
-        let printView = NSTextView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        printView.string = string
-        
-        // Erstellen Sie eine Druckoperation mit der NSTextView und dem PrintInfo-Objekt
-        let printOperation = NSPrintOperation(view: printView, printInfo: printInfo)
-        printOperation.showsPrintPanel = true // Hier das Druckfenster zeigen
-        printOperation.showsProgressPanel = false
-        
-        // Starten Sie die Druckoperation
-        printOperation.run()
-    }
-    
-    @IBAction func printButtonClicked(_ sender: Any) {
-       
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

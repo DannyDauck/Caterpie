@@ -11,28 +11,24 @@ import CoreBluetooth
 struct BlueToothPrinterRowView: View {
     
     @State var printer: BluetoothPrinter
+    @State var isConnected: Bool = true
+    var cm = ColorManager.shared
     
     var body: some View {
         HStack{
-            switch printer.state {
-            case .connected:
+            if isConnected {
                 ZStack{
                     Image(systemName: "dot.radiowaves.right")
                         .font(.title2)
                         .padding([.top, .leading], 2)
                     Image(systemName: "dot.radiowaves.right")
                         .font(.title2)
-                        .foregroundStyle(.green)
+                        .foregroundStyle(cm.symbolActive)
                 }
-            case .connecting:
-                ProgressView()
-                    .frame(width: 48, height: 48)
-            case .disconnected:
+            
+            }else{
                 Image(systemName: "dot.radiowaves.right")
                     .font(.title2)
-            case .disconnecting:
-                ProgressView()
-                    .frame(width: 48, height: 48)
             }
             Image(systemName: "printer.fill")
                 .font(.title2)
@@ -40,10 +36,28 @@ struct BlueToothPrinterRowView: View {
                 Text("BT-Printer")
                     .padding([.top,.leading], 2)
                 Text("BT-Printer")
-                    .foregroundStyle(.yellow)
+                    .foregroundStyle(cm.txtImportant)
             }
             Text(printer.name)
                 .fontWeight(printer.state == .connected ? .bold : .regular)
+            
+            if isConnected{
+                Button(action: {
+                    BluetoothManager.shared.disconnectDevice(printer.peripheral)
+                    isConnected = false
+                }){
+                    Text("disconnect")
+                }.buttonStyle(.borderedProminent)
+                    .padding(.leading, 5)
+            }else{
+                Button(action:{
+                    BluetoothManager.shared.connectDevice(printer.peripheral)
+                    isConnected = true
+                }){
+                    Text("connect")
+                }.buttonStyle(.borderedProminent)
+                    .padding(.leading, 5)
+            }
             
         }.padding(.horizontal)
             .padding(.vertical,4)
@@ -52,12 +66,4 @@ struct BlueToothPrinterRowView: View {
     }
 }
 
-struct BlueToothPrinterRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        var printer = BluetoothPrinter(name: "Goojptr MTP-3b", service: CBUUID(string: "9FA480E0-4967-4542-9390-D343DC5D04AE"), characteristic: CBUUID(string: "9FA480E0-4967-4542-9390-D343DC5D04AE"), identifier: UUID())
-        printer.setState(.connected)
-        
-        return BlueToothPrinterRowView(printer: printer)
-            .previewLayout(.fixed(width: 300, height: 100))
-    }
-}
+

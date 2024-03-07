@@ -4,142 +4,173 @@
 //
 //  Created by Danny Dauck on 01.03.24.
 //
-//   https://github.com/KevinGong2013/Printer/blob/refactor/Sources/Printer/Hardware/Bluetooth/BluetoothPeripheralDelegate.swift
+
 
 
 import Cocoa
 import Foundation
 import CoreBluetooth
 
+
 class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate, ObservableObject {
     
-    static var shared = BluetoothManager()
-    private var centralManager: CBCentralManager!
-    private var imageCharacteristic: CBCharacteristic?
+    
+    // MARK: - Var declaration
+    
+    static let shared = BluetoothManager()
     
     @Published var availableDevices: [CBPeripheral] = []
-    @Published var connectedDevices: [CBPeripheral] = []
     @Published var availablePrinters: [BluetoothPrinter] = []
-    private var supportedPrinterCharacteristics: [String] = ["BEF8D6C9-9C21-4C9E-B632-BD58C1009F9F"]
+    @Published var isRefreshing: Bool = false
+    @Published var connectedDevices: [CBPeripheral] = []
+    
+    private var manager: CBCentralManager!
+    
+    private var listOfPrintingStandardCHaracteristicUUIDs: [String] = ["BEF8D6C9-9C21-4C9E-B632-BD58C1009F9F"]
+    
+    // MARK: - End
+    
     
     private override init() {
         super.init()
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+        manager = CBCentralManager(delegate: self, queue: nil)
         
-        // Überprüfen und Hinzufügen bereits verbundener Geräte
-        // TODO statt ein leeres Array, ein Array mit verfügbaren Services zurückgeben
-        let connectedPeripherals = centralManager.retrieveConnectedPeripherals(withServices: [])
-        for peripheral in connectedPeripherals {
-            connectedDevices.append(peripheral)
-        }
     }
     
+    
+    
+    
+    
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        switch central.state {
-        case .poweredOn:
-            // Bluetooth ist aktiviert, starte Gerätesuche
-            centralManager.scanForPeripherals(withServices: nil, options: nil)
-        default:
-            print("Bluetooth ist nicht verfügbar.")
+        switch central.state{
+            //TODO implement what to do for states  instead of integers
+        case .poweredOn:1
+        case .poweredOff: 0
+        case .resetting: 0
+        case .unauthorized: 5
+        case .unknown: 6
+        case .unsupported: 7
+        @unknown default:  2
+            
         }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
-        //checking all BT-Devices if name is not nil and contains a "p" for printer
-        if !availableDevices.contains(peripheral) && peripheral.name != nil && peripheral.name!.lowercased().contains("p"){
+        guard let name = peripheral.name else {
+            return
+        }
+        
+        if !availableDevices.contains(peripheral){
             availableDevices.append(peripheral)
         }
     }
     
-    func connect(to peripheral: CBPeripheral) {
-        
-        centralManager.connect(peripheral, options: nil)
-        connectedDevices.append(peripheral)
-    }
-    
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        // Verbindung erfolgreich hergestellt
-        print("Verbindung hergestellt mit \(peripheral.name ?? "Unbekanntes Gerät")")
-        
-        // Dienste des verbundenen Geräts entdecken
         peripheral.delegate = self
         peripheral.discoverServices(nil)
     }
     
-    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        print("Fehler beim Herstellen der Verbindung zum Peripheral: \(error?.localizedDescription ?? "Unbekannter Fehler")")
+    func startScan(){
+        if !manager.isScanning{
+            manager.scanForPeripherals(withServices: nil, options: nil)
+        }
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+    func stopScan(){
+        if manager.isScanning{
+            manager.stopScan()
+        }
+    }
+    
+    func connectDevice(_ peripheral: CBPeripheral){
+        manager.connect(peripheral)
+        if !connectedDevices.contains(peripheral){
+            connectedDevices.append(peripheral)
+        }
+    }
+    
+    func disconnectDevice(_ peripheral: CBPeripheral){
+        manager.cancelPeripheralConnection(peripheral)
+        if connectedDevices.contains(peripheral){
+            connectedDevices.removeAll(where: {
+                $0 == peripheral
+            })
+        }
+    }
+    
+    func refresh(){
+        stopScan()
+        isRefreshing = true
+        availableDevices = []
+        availablePrinters = []
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.isRefreshing = false
+        }
+        
+    }
+    
+    func discoverServices(_ peripheral: CBPeripheral){
+        peripheral.discoverServices(nil)
+    }
+    
+    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        if let error{
+            print("<<<<<<<<<  Discover services failed: \(error)")
+            return
+        }
+        
         guard let services = peripheral.services else {
-            print("no services found")
-            return }
+            print("tt_err_no_service_found")
+            print("peripheral: \(peripheral.identifier)")
+            return
+        }
         
-        print(services)
         for service in services {
-            peripheral.discoverCharacteristics(nil, for: service)
-            print("\(service.uuid):  \(service.description)")
+            peripheral.discoverCharacteristics([], for: service)
         }
-        
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        guard let characteristics = service.characteristics else {
-            print("No characteristics found for service \(service.uuid)")
+    internal func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        if let error{
+            print("<<<<<<<<<<<   Discover characteristics failed: \(error)")
             return
         }
         
-        print("Characteristics found for service \(service.uuid):")
-        for characteristic in characteristics {
-            print("- \(characteristic.uuid)")
-            if supportedPrinterCharacteristics.contains("\(characteristic.uuid)"){
-                let foundPrinter = BluetoothPrinter(name: peripheral.name!, service: service.uuid, characteristic: characteristic.uuid, identifier: peripheral.identifier)
-                print("identifier:  \(foundPrinter.identifier)")
-                availablePrinters.append(foundPrinter)
+        guard let chars = service.characteristics else {
+            print("tt_err_no_char_found")
+            print("service: \(service.uuid)")
+            return
+        }
+        
+        for char in chars{
+            if listOfPrintingStandardCHaracteristicUUIDs.contains(where: {$0 == "\(char.uuid)"}){
+                createStandardBluetoothPrinter(peripheral, service, char)
             }
+            print(chars)
         }
-    }
-    
-    
-    func sendTestCommand(command: String, characteristic: CBCharacteristic){
         
     }
     
-    func printImage(image: Data){
-        guard let printer = connectedDevices.first else {
-            print("No printer connected")
-            return
-        }
-        
-        // Hier den Dienst 16F0 verwenden (falls Ihr Drucker diesen Dienst unterstützt)
-        let serviceUUID = CBUUID(string: "18F0")
-        
-        guard let service = printer.services?.first(where: { $0.uuid == serviceUUID }) else {
-            print("Service 16F0 not found")
-            return
-        }
-        
-        // Hier eine passende Charakteristik für das Schreiben von Daten auswählen
-        guard let characteristic = service.characteristics?.first(where: { $0.properties.contains(.write) }) else {
-            print("No writable characteristic found in service 18F0")
-            return
-        }
-        
-        // Daten an den Drucker senden
-        printer.writeValue(image, for: characteristic, type: .withResponse)
+    private func createStandardBluetoothPrinter(_ peripheral: CBPeripheral, _ service: CBService, _ char: CBCharacteristic){
+        let newPrinter = BluetoothPrinter(name: peripheral.name ?? "", service: service.uuid, characteristic: char, identifier: peripheral.identifier, peripheral: peripheral)
+        availablePrinters.append(newPrinter)
     }
     
-    func printConnectedPrinterServiceUUIDs() {
-        guard let printer = connectedDevices.first else {
-            print("No printer connected")
-            return
-        }
-        
-        for service in printer.services ?? [] {
-            print("Service UUID: \(service.uuid)")
-        }
+    
+    
+    //TODO
+    
+    func updatePrinterStandardCharacteristics(){
+        //when the app is connected to firebase and coreData is implemented
+        //gotta use this on init to check if new available standards are available
+        //and may not just use tha characteristic, better a printer profil
+        //or check by the printers peripheral name as more profils are knowing than just my develope
+        //printer
     }
+    
 }
+
 
 

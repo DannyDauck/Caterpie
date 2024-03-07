@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var btManager = BluetoothManager.shared
     
     var body: some View {
         VStack{
             
             HStack {
                 QRCodeView(inputString: "I'd like to have a banana split")
-                BTDeviceChoiceView(bluetoothManager: btManager)
+                BTDeviceChoiceView()
             }
             .padding()
         }

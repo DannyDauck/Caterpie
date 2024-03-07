@@ -12,7 +12,7 @@ struct BluetoothPrinter{
     
     let name: String
     let service: CBUUID
-    let characteristic: CBUUID
+    let characteristic: CBCharacteristic
     let identifier: UUID
     
     enum State{
@@ -22,15 +22,25 @@ struct BluetoothPrinter{
         case disconnecting
     }
     
-    var state: State = .disconnected
+    let peripheral: CBPeripheral
     
-    mutating func setState(_ stateIn: State){
-        self.state = stateIn
+    var state: State{
+        BluetoothManager.shared.connectedDevices.contains(peripheral) ? .connected : .disconnected
     }
     
+    init(name: String, service: CBUUID, characteristic: CBCharacteristic, identifier: UUID, peripheral: CBPeripheral) {
+            self.name = name
+            self.service = service
+            self.characteristic = characteristic
+            self.identifier = identifier
+            self.peripheral = peripheral
+        }
+    
+    func disconnect(){
+        BluetoothManager.shared.disconnectDevice(peripheral)
+    }
     
 }
-
 
 private extension CBPeripheral {
     var printerState: BluetoothPrinter.State {
@@ -48,3 +58,6 @@ private extension CBPeripheral {
         }
     }
 }
+
+
+

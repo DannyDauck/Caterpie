@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */; };
+		D580BD892B9929040050074D /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD882B9929040050074D /* ColorManager.swift */; };
+		D580BD8D2B993D510050074D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D580BD8C2B993D510050074D /* Localizable.xcstrings */; };
 		D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589806F2B91377600D3EBEB /* CaterpieApp.swift */; };
 		D58980722B91377600D3EBEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980712B91377600D3EBEB /* ContentView.swift */; };
 		D58980742B91377700D3EBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980732B91377700D3EBEB /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothPrinterRowView.swift; sourceTree = "<group>"; };
+		D580BD882B9929040050074D /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		D580BD8C2B993D510050074D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D589806C2B91377600D3EBEB /* Caterpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caterpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589806F2B91377600D3EBEB /* CaterpieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieApp.swift; sourceTree = "<group>"; };
 		D58980712B91377600D3EBEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D580BD8B2B993D090050074D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D580BD8C2B993D510050074D /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		D58980632B91377600D3EBEB = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +85,7 @@
 		D589806E2B91377600D3EBEB /* Caterpie */ = {
 			isa = PBXGroup;
 			children = (
+				D580BD8B2B993D090050074D /* Localization */,
 				D58980A72B91ECEB00D3EBEB /* Models */,
 				D58980A62B91E08000D3EBEB /* Info.plist */,
 				D58980A32B91DB4B00D3EBEB /* BluetoothDeviceChoice */,
@@ -101,6 +114,7 @@
 				D589807F2B9138AC00D3EBEB /* QRCodeView.swift */,
 				D58980A12B91DB0800D3EBEB /* BluetoothManager.swift */,
 				D58980AA2B9210E100D3EBEB /* PrinterManager.swift */,
+				D580BD882B9929040050074D /* ColorManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -171,6 +185,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = D58980632B91377600D3EBEB;
 			productRefGroup = D589806D2B91377600D3EBEB /* Products */;
@@ -189,6 +204,7 @@
 			files = (
 				D58980772B91377700D3EBEB /* Preview Assets.xcassets in Resources */,
 				D58980742B91377700D3EBEB /* Assets.xcassets in Resources */,
+				D580BD8D2B993D510050074D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +221,7 @@
 				D58980A22B91DB0800D3EBEB /* BluetoothManager.swift in Sources */,
 				D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */,
 				D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */,
+				D580BD892B9929040050074D /* ColorManager.swift in Sources */,
 				D58980B02B9459BD00D3EBEB /* BluetoothPrinter.swift in Sources */,
 				D58980AB2B9210E100D3EBEB /* PrinterManager.swift in Sources */,
 			);

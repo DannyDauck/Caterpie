@@ -33,7 +33,14 @@ struct QRCodeView: View {
                 guard let image = generateQRCodeImage() else {
                     return
                 }
-                pm.printString(string: inputString)
+               // do{
+               //     try BluetoothManager.shared.printImage(image: generateQRCodeImage()!, printer: BluetoothManager.shared.availablePrinters.first!)
+               // }catch{
+               //     if error as! BananaSplitError == BananaSplitError.imageConvertFailed{
+               //         print(error)
+                //    }
+                
+             //   }
                 
             }){
                 
@@ -64,39 +71,6 @@ struct QRCodeView: View {
 
         let nsImage = NSImage(cgImage: cgImage, size: NSSize(width: outputImage.extent.width, height: outputImage.extent.height))
         return nsImage
-    }
-
-    func saveQRCodeToPhotoLibrary(image: NSImage?) {
-        guard let image = image else { return }
-
-        let imageData = image.tiffRepresentation
-        guard let imageRep = NSBitmapImageRep(data: imageData!) else { return }
-        guard let pngData = imageRep.representation(using: .png, properties: [:]) else { return }
-        
-        PHPhotoLibrary.requestAuthorization { status in
-            guard status == .authorized else { return }
-
-            PHPhotoLibrary.shared().performChanges {
-                let creationRequest = PHAssetCreationRequest.forAsset()
-                creationRequest.addResource(with: .photo, data: pngData, options: nil)
-            } completionHandler: { success, error in
-                if let error = error {
-                    print("Fehler beim Speichern des QR-Codes: \(error)")
-                } else {
-                    print("QR-Code erfolgreich gespeichert")
-                }
-            }
-        }
-    }
-    
-    
-    func convertImageToJPEGData(image: NSImage) -> Data? {
-        guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
-            return nil
-        }
-        let bitmapImageRep = NSBitmapImageRep(cgImage: cgImage)
-        let jpegData = bitmapImageRep.representation(using: .jpeg, properties: [:])
-        return jpegData
     }
 }
 
