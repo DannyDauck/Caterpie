@@ -67,9 +67,27 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         }
     }
     
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral){
+        if !connectedDevices.contains(peripheral){
+            connectedDevices.append(peripheral)
+        }
         peripheral.delegate = self
         peripheral.discoverServices(nil)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?){
+        if let error{
+            print("tt_err_connect_to_device_failed")
+            print(error)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        if connectedDevices.contains(peripheral){
+            connectedDevices.removeAll(where: {
+                $0 == peripheral
+            })
+        }
     }
     
     func startScan(){
@@ -86,25 +104,24 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     
     func connectDevice(_ peripheral: CBPeripheral){
         manager.connect(peripheral)
-        if !connectedDevices.contains(peripheral){
-            connectedDevices.append(peripheral)
-        }
     }
     
     func disconnectDevice(_ peripheral: CBPeripheral){
         manager.cancelPeripheralConnection(peripheral)
-        if connectedDevices.contains(peripheral){
-            connectedDevices.removeAll(where: {
-                $0 == peripheral
-            })
-        }
+        
     }
     
     func refresh(){
         stopScan()
         isRefreshing = true
-        availableDevices = []
-        availablePrinters = []
+        availableDevices.removeAll(where: {
+            !connectedDevices.contains($0)
+        })
+        availablePrinters.removeAll(where: {printer in
+            !connectedDevices.contains(where: {device in
+                device.identifier == printer.identifier
+            })
+        })
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.isRefreshing = false
         }

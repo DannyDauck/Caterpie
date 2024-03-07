@@ -11,9 +11,18 @@ import CoreBluetooth
 struct BluetoothPrinter{
     
     let name: String
-    let service: CBUUID
-    let characteristic: CBCharacteristic
+    var displayName: String
+    let peripheral: CBPeripheral
+    var service: CBUUID
+    var characteristic: CBCharacteristic
     let identifier: UUID
+    
+    var printSizeMM: Int = 60
+    var hasCutter: Bool = false
+    
+    var imagePrint: String = ""
+    var textPrint: String = ""
+    var cutterCommand: String = ""
     
     enum State{
         case connected
@@ -22,14 +31,9 @@ struct BluetoothPrinter{
         case disconnecting
     }
     
-    let peripheral: CBPeripheral
-    
-    var state: State{
-        BluetoothManager.shared.connectedDevices.contains(peripheral) ? .connected : .disconnected
-    }
-    
     init(name: String, service: CBUUID, characteristic: CBCharacteristic, identifier: UUID, peripheral: CBPeripheral) {
             self.name = name
+            self.displayName = name
             self.service = service
             self.characteristic = characteristic
             self.identifier = identifier
@@ -40,24 +44,9 @@ struct BluetoothPrinter{
         BluetoothManager.shared.disconnectDevice(peripheral)
     }
     
-}
-
-private extension CBPeripheral {
-    var printerState: BluetoothPrinter.State {
-        switch state {
-        case .disconnected:
-            return .disconnected
-        case .connected:
-            return .connected
-        case .connecting:
-            return .connecting
-        case .disconnecting:
-            return .disconnecting
-        @unknown default:
-            return .disconnected
-        }
+    func connect(){
+        BluetoothManager.shared.connectDevice(peripheral)
     }
 }
-
 
 

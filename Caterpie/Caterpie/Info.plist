@@ -3,8 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Need bluetooth to connect with printer</string>
-	<key>CFBundleDocumentTypes</key>
-	<array/>
+	<string>Need bluetooth to connect with printer and handheld devices</string>
 </dict>
 </plist>

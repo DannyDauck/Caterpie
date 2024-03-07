@@ -25,7 +25,7 @@ struct QRCodeView: View {
                     .interpolation(.none)
                     .scaledToFit()
             } else {
-                Text("Failed to generate QR code")
+                Text("tt_err_Failed_to_generate_qr_code")
                     .foregroundColor(.red)
             }
             
@@ -44,7 +44,7 @@ struct QRCodeView: View {
                 
             }){
                 
-                Text("print")
+                Text("tt_print")
             }.buttonStyle(.borderedProminent)
             
             ForEach(pm.listPrinters(), id: \.self){printer in

@@ -10,6 +10,15 @@
 		D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */; };
 		D580BD892B9929040050074D /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD882B9929040050074D /* ColorManager.swift */; };
 		D580BD8D2B993D510050074D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D580BD8C2B993D510050074D /* Localizable.xcstrings */; };
+		D580BD912B99D60E0050074D /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD902B99D60E0050074D /* MainScreenView.swift */; };
+		D580BD932B99FD380050074D /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD922B99FD380050074D /* MainScreenViewModel.swift */; };
+		D580BD962B99FDDA0050074D /* MainMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD952B99FDDA0050074D /* MainMenuItem.swift */; };
+		D580BD982B9A04830050074D /* MainMenueItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD972B9A04830050074D /* MainMenueItemView.swift */; };
+		D580BD9A2B9A12CF0050074D /* SubItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD992B9A12CF0050074D /* SubItemView.swift */; };
+		D580BD9D2B9A1A460050074D /* PrinterSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD9C2B9A1A460050074D /* PrinterSettingsView.swift */; };
+		D580BD9F2B9A1BB40050074D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD9E2B9A1BB40050074D /* Employee.swift */; };
+		D580BDA22B9A1C6F0050074D /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDA12B9A1C6F0050074D /* Permission.swift */; };
+		D580BDAE2B9A728D0050074D /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDAD2B9A728D0050074D /* AppearanceSettingsView.swift */; };
 		D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589806F2B91377600D3EBEB /* CaterpieApp.swift */; };
 		D58980722B91377600D3EBEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980712B91377600D3EBEB /* ContentView.swift */; };
 		D58980742B91377700D3EBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980732B91377700D3EBEB /* Assets.xcassets */; };
@@ -25,6 +34,16 @@
 		D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothPrinterRowView.swift; sourceTree = "<group>"; };
 		D580BD882B9929040050074D /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		D580BD8C2B993D510050074D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		D580BD902B99D60E0050074D /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		D580BD922B99FD380050074D /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		D580BD952B99FDDA0050074D /* MainMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuItem.swift; sourceTree = "<group>"; };
+		D580BD972B9A04830050074D /* MainMenueItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenueItemView.swift; sourceTree = "<group>"; };
+		D580BD992B9A12CF0050074D /* SubItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubItemView.swift; sourceTree = "<group>"; };
+		D580BD9C2B9A1A460050074D /* PrinterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterSettingsView.swift; sourceTree = "<group>"; };
+		D580BD9E2B9A1BB40050074D /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		D580BDA12B9A1C6F0050074D /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
+		D580BDA72B9A60490050074D /* localization_info.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = localization_info.md; sourceTree = "<group>"; };
+		D580BDAD2B9A728D0050074D /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
 		D589806C2B91377600D3EBEB /* Caterpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caterpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589806F2B91377600D3EBEB /* CaterpieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieApp.swift; sourceTree = "<group>"; };
 		D58980712B91377600D3EBEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,8 +81,62 @@
 			isa = PBXGroup;
 			children = (
 				D580BD8C2B993D510050074D /* Localizable.xcstrings */,
+				D580BDA72B9A60490050074D /* localization_info.md */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		D580BD8E2B99D5D90050074D /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				D580BD942B99FDA30050074D /* Components */,
+				D580BD902B99D60E0050074D /* MainScreenView.swift */,
+				D580BD922B99FD380050074D /* MainScreenViewModel.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		D580BD942B99FDA30050074D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D580BD952B99FDDA0050074D /* MainMenuItem.swift */,
+				D580BD972B9A04830050074D /* MainMenueItemView.swift */,
+				D580BD992B9A12CF0050074D /* SubItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D580BD9B2B9A1A230050074D /* PrinterSettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				D580BD9C2B9A1A460050074D /* PrinterSettingsView.swift */,
+			);
+			path = PrinterSettingsView;
+			sourceTree = "<group>";
+		};
+		D580BDA02B9A1C570050074D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D580BDA12B9A1C6F0050074D /* Permission.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		D580BDA82B9A6ED90050074D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D580BDAC2B9A72620050074D /* AppearanceSettingsView */,
+				D580BD9B2B9A1A230050074D /* PrinterSettingsView */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D580BDAC2B9A72620050074D /* AppearanceSettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				D580BDAD2B9A728D0050074D /* AppearanceSettingsView.swift */,
+			);
+			path = AppearanceSettingsView;
 			sourceTree = "<group>";
 		};
 		D58980632B91377600D3EBEB = {
@@ -85,9 +158,11 @@
 		D589806E2B91377600D3EBEB /* Caterpie */ = {
 			isa = PBXGroup;
 			children = (
-				D580BD8B2B993D090050074D /* Localization */,
-				D58980A72B91ECEB00D3EBEB /* Models */,
 				D58980A62B91E08000D3EBEB /* Info.plist */,
+				D580BD8B2B993D090050074D /* Localization */,
+				D580BDA82B9A6ED90050074D /* Settings */,
+				D580BD8E2B99D5D90050074D /* MainView */,
+				D58980A72B91ECEB00D3EBEB /* DataModels */,
 				D58980A32B91DB4B00D3EBEB /* BluetoothDeviceChoice */,
 				D589807E2B91388E00D3EBEB /* Tools */,
 				D589806F2B91377600D3EBEB /* CaterpieApp.swift */,
@@ -110,7 +185,6 @@
 		D589807E2B91388E00D3EBEB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				D58980AE2B9459A500D3EBEB /* Models */,
 				D589807F2B9138AC00D3EBEB /* QRCodeView.swift */,
 				D58980A12B91DB0800D3EBEB /* BluetoothManager.swift */,
 				D58980AA2B9210E100D3EBEB /* PrinterManager.swift */,
@@ -128,19 +202,14 @@
 			path = BluetoothDeviceChoice;
 			sourceTree = "<group>";
 		};
-		D58980A72B91ECEB00D3EBEB /* Models */ = {
+		D58980A72B91ECEB00D3EBEB /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		D58980AE2B9459A500D3EBEB /* Models */ = {
-			isa = PBXGroup;
-			children = (
+				D580BDA02B9A1C570050074D /* Enums */,
 				D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */,
+				D580BD9E2B9A1BB40050074D /* Employee.swift */,
 			);
-			path = Models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,14 +285,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58980722B91377600D3EBEB /* ContentView.swift in Sources */,
+				D580BD962B99FDDA0050074D /* MainMenuItem.swift in Sources */,
+				D580BD982B9A04830050074D /* MainMenueItemView.swift in Sources */,
+				D580BD932B99FD380050074D /* MainScreenViewModel.swift in Sources */,
+				D580BD912B99D60E0050074D /* MainScreenView.swift in Sources */,
 				D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */,
 				D58980A52B91DB8100D3EBEB /* BTDeviceChoiceView.swift in Sources */,
 				D58980A22B91DB0800D3EBEB /* BluetoothManager.swift in Sources */,
 				D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */,
+				D580BD9F2B9A1BB40050074D /* Employee.swift in Sources */,
 				D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */,
 				D580BD892B9929040050074D /* ColorManager.swift in Sources */,
 				D58980B02B9459BD00D3EBEB /* BluetoothPrinter.swift in Sources */,
+				D580BD9A2B9A12CF0050074D /* SubItemView.swift in Sources */,
+				D580BD9D2B9A1A460050074D /* PrinterSettingsView.swift in Sources */,
+				D580BDA22B9A1C6F0050074D /* Permission.swift in Sources */,
 				D58980AB2B9210E100D3EBEB /* PrinterManager.swift in Sources */,
+				D580BDAE2B9A728D0050074D /* AppearanceSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -109,12 +109,12 @@ struct BTDeviceChoiceView: View {
                             bluetoothManager.connectDevice(device)
                         }
                 }
-            }
+            }.cornerRadius(8)
             HStack{
                 Image(systemName: "magnifyingglass")
                     .font(.title2)
-                TextField("Name", text: $searchText)
-            }
+                TextField("tt_name", text: $searchText)
+            }.padding(.top, 5)
         }.padding()
     }
 }

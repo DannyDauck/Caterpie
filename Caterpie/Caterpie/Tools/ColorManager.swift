@@ -25,4 +25,7 @@ class ColorManager: ObservableObject{
     var shadow = Color.white
     var linearShadow = LinearGradient(colors: [.white, .black], startPoint: .leading, endPoint: .trailing)
     
+    var menueSubItemBG = LinearGradient(colors: [.white, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)
+    var menueSubItemBGInversed = LinearGradient(colors: [.gray, .white], startPoint: .bottomLeading, endPoint: .topTrailing)
+    
 }

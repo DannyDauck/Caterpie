@@ -33,20 +33,20 @@ struct BlueToothPrinterRowView: View {
             Image(systemName: "printer.fill")
                 .font(.title2)
             ZStack{
-                Text("BT-Printer")
+                Text("tt_BT-Printer")
                     .padding([.top,.leading], 2)
-                Text("BT-Printer")
+                Text("tt_BT-Printer")
                     .foregroundStyle(cm.txtImportant)
             }
             Text(printer.name)
-                .fontWeight(printer.state == .connected ? .bold : .regular)
+                .fontWeight(isConnected ?  .bold : .regular)
             
             if isConnected{
                 Button(action: {
                     BluetoothManager.shared.disconnectDevice(printer.peripheral)
                     isConnected = false
                 }){
-                    Text("disconnect")
+                    Text("tt_disconnect")
                 }.buttonStyle(.borderedProminent)
                     .padding(.leading, 5)
             }else{
@@ -54,7 +54,7 @@ struct BlueToothPrinterRowView: View {
                     BluetoothManager.shared.connectDevice(printer.peripheral)
                     isConnected = true
                 }){
-                    Text("connect")
+                    Text("tt_connect")
                 }.buttonStyle(.borderedProminent)
                     .padding(.leading, 5)
             }

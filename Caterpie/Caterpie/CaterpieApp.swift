@@ -11,7 +11,7 @@ import SwiftUI
 struct CaterpieApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreenView(vm: MainScreenViewModel(user: Employee(permissions: Permission.allCases)))
         }
     }
 }
