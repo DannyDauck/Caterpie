@@ -10,7 +10,7 @@ import SwiftUI
 struct MainScreenView: View {
     
     let cm = ColorManager.shared
-    @ObservedObject var vm: MainScreenViewModel
+    @EnvironmentObject var vm: MainScreenViewModel
     
     var body: some View {
         VStack(spacing: 0){
@@ -31,6 +31,7 @@ struct MainScreenView: View {
                 }
                 Spacer()
             }.background(.black)
+            Divider()
             GeometryReader{geo in
                 HStack(spacing: 0){
                     VStack(spacing: 0){
@@ -40,7 +41,16 @@ struct MainScreenView: View {
                         Spacer()
                     }.frame(width: geo.size.width / 4)
                     
-                    BTDeviceChoiceView()
+                    switch vm.currentViewIndex{
+                        
+                    case 1 : OverviewView()
+                        
+                    case 2.1: PrinterSettingsView()
+                    case 2.2: AppearanceSettingsView()
+                        
+                    default:
+                        OverviewView()
+                    }
                 }
             }
         }
@@ -48,5 +58,5 @@ struct MainScreenView: View {
 }
 
 #Preview {
-    MainScreenView(vm: MainScreenViewModel(user: Employee(permissions: Permission.allCases)))
+    MainScreenView()
 }

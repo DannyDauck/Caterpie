@@ -13,6 +13,9 @@ struct BTDeviceChoiceView: View {
     @ObservedObject var cm = ColorManager.shared
     @State var isScanning = false
     @State var searchText = ""
+    @State var currentDevice: CBPeripheral?
+    @State var alertIsVisible = false
+    private let am = AudioManager()
     
     var body: some View {
         VStack{
@@ -41,8 +44,12 @@ struct BTDeviceChoiceView: View {
                     .cornerRadius(5)
                     .shadow(radius: 5)
                     .onTapGesture {
-                        isScanning = true
-                        bluetoothManager.startScan()
+                        withAnimation{
+                            isScanning = true
+                            bluetoothManager.startScan()
+                            am.play(.click)
+                        }
+                        
                     }
                 ZStack{
                     Image(systemName: "stop.fill")
@@ -62,8 +69,11 @@ struct BTDeviceChoiceView: View {
                     .cornerRadius(5)
                     .shadow(radius: 5)
                     .onTapGesture {
-                        isScanning = false
-                        bluetoothManager.stopScan()
+                        withAnimation(.smooth){
+                            isScanning = false
+                            bluetoothManager.stopScan()
+                            am.play(.click)
+                        }
                     }
                 ZStack{
                     Image(systemName: "trash.fill")
@@ -85,6 +95,7 @@ struct BTDeviceChoiceView: View {
                     .onTapGesture {
                         bluetoothManager.refresh()
                         isScanning = false
+                        am.play(.trash)
                     }
                 Spacer()
             }
@@ -105,9 +116,23 @@ struct BTDeviceChoiceView: View {
                     }).first!)
                 }else{
                     Text(device.name!)
+                        .foregroundStyle(currentDevice == device ? cm.txtImportant : Color(NSColor.labelColor))
                         .onTapGesture {
                             bluetoothManager.connectDevice(device)
+                            currentDevice = device
                         }
+                    if currentDevice == device{
+                        HStack{
+                            Image(systemName: "plus")
+                                .font(.title3)
+                                .foregroundStyle(cm.txtImportant)
+                                .padding(.leading, 5)
+                            Text("tt_append")
+                                .foregroundStyle(cm.txtImportant)
+                        }.onTapGesture {
+                           alertIsVisible = true
+                        }
+                    }
                 }
             }.cornerRadius(8)
             HStack{
@@ -116,6 +141,16 @@ struct BTDeviceChoiceView: View {
                 TextField("tt_name", text: $searchText)
             }.padding(.top, 5)
         }.padding()
+            .alert(isPresented: $alertIsVisible){
+                Alert(
+                    title: Text("tt_attention"),
+                    message: Text("tt_warning_add_device_to_printers"),
+                    primaryButton: .default(Text("tt_h1_understood")){
+                        //TODO add func to PrinterManager to append BT printer
+                    },
+                    secondaryButton: .cancel(Text("tt_cancel"))
+                )
+            }
     }
 }
 

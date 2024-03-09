@@ -11,7 +11,6 @@ import Photos
 struct QRCodeView: View {
     @State var inputString: String
     let filter = CIFilter.qrCodeGenerator()
-    let pm = PrinterManager.shared
     @State var printerName  = ""
 
     var body: some View {
@@ -33,27 +32,11 @@ struct QRCodeView: View {
                 guard let image = generateQRCodeImage() else {
                     return
                 }
-               // do{
-               //     try BluetoothManager.shared.printImage(image: generateQRCodeImage()!, printer: BluetoothManager.shared.availablePrinters.first!)
-               // }catch{
-               //     if error as! BananaSplitError == BananaSplitError.imageConvertFailed{
-               //         print(error)
-                //    }
-                
-             //   }
-                
             }){
                 
                 Text("tt_print")
             }.buttonStyle(.borderedProminent)
             
-            ForEach(pm.listPrinters(), id: \.self){printer in
-                Text(printer)
-                    .foregroundStyle(printerName == printer ? Color.green : Color.white)
-                    .onTapGesture {
-                        printerName = printer
-                    }
-            }
         }
         .padding()
     }

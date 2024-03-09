@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "analyze view" : {
+
+    },
     "Caterpie" : {
 
     },
@@ -53,11 +56,196 @@
     "Printer" : {
 
     },
-    "Printer settings view" : {
-
-    },
     "Settings" : {
 
+    },
+    "tt_append" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "append"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "añadir"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ajouter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aggiungere"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "acrescentar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "eklemek"
+          }
+        }
+      }
+    },
+    "tt_appending_printer_failed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drucker hinzufügen fehlgeschlagen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appending printer failed"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error al agregar impresora"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échec de l'ajout de l'imprimante"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiunta della stampante fallita"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falha ao adicionar impressora"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazıcı eklenemedi"
+          }
+        }
+      }
+    },
+    "tt_appending_printer_succeeded" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drucker hinzufügen erfolgreich"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appending printer succeeded"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agregar impresora exitosamente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajout de l'imprimante réussi"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiunta della stampante riuscita"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar impressora com sucesso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazıcı ekleme başarılı"
+          }
+        }
+      }
+    },
+    "tt_attention" : {
+        "extractionState" : "manual",
+        "localizations" : {
+            "de" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Achtung"
+                }
+            },
+            "en" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Attention"
+                }
+            },
+            "es" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Atención"
+                }
+            },
+            "fr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Attention"
+                }
+            },
+            "it" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Attenzione"
+                }
+            },
+            "pt" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Atenção"
+                }
+            },
+            "tr" : {
+                "stringUnit" : {
+                    "state" : "translated",
+                    "value" : "Dikkat"
+                }
+            }
+        }
     },
     "tt_BT-Printer" : {
       "extractionState" : "manual",
@@ -102,6 +290,53 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bluetooth Yazıcı"
+          }
+        }
+      }
+    },
+    "tt_cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İptal"
           }
         }
       }
@@ -203,10 +438,46 @@
     "tt_err_connect_to_device_failed" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbindung zum Gerät fehlgeschlagen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "connecting device failed"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fallo al conectar al dispositivo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la connexion au périphérique a échoué"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "connessione al dispositivo non riuscita"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "falha ao conectar ao dispositivo"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cihaza bağlantı başarısız"
           }
         }
       }
@@ -399,6 +670,53 @@
         }
       }
     },
+    "tt_h1_overview" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überblick"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overview"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resumen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panoramica"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visão geral"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genel Bakış"
+          }
+        }
+      }
+    },
     "tt_h1_printer" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -489,6 +807,100 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bluetooth cihazları arayın"
+          }
+        }
+      }
+    },
+    "tt_h1_system_printers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemdrucker"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System printers"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impresoras del sistema"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimantes système"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stampanti di sistema"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impressoras do sistema"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistem yazıcıları"
+          }
+        }
+      }
+    },
+    "tt_h1_understood" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verstanden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Understood"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entendido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compris"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compreso"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entendido"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anladım"
           }
         }
       }
@@ -675,6 +1087,53 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "standart yazıcı"
+          }
+        }
+      }
+    },
+    "tt_warning_add_device_to_printers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Gerät verfügt über keinen Standarddienst für Drucker. Das Hinzufügen erfordert möglicherweise erweiterte technische Kenntnisse."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This device does not have a standard printer service. Adding it may require advanced technical knowledge."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este dispositivo no tiene un servicio de impresora estándar. Agregarlo puede requerir conocimientos técnicos avanzados."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cet appareil n'a pas de service d'impression standard. Son ajout peut nécessiter des connaissances techniques avancées."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo dispositivo non dispone di un servizio di stampa standard. La sua aggiunta potrebbe richiedere conoscenze tecniche avanzate."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este dispositivo não possui um serviço de impressora padrão. Adicioná-lo pode exigir conhecimentos técnicos avançados."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu cihazın standart bir yazıcı servisi yok. Eklemek ileri teknik bilgi gerektirebilir."
           }
         }
       }

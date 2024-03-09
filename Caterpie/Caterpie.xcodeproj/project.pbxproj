@@ -19,6 +19,12 @@
 		D580BD9F2B9A1BB40050074D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD9E2B9A1BB40050074D /* Employee.swift */; };
 		D580BDA22B9A1C6F0050074D /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDA12B9A1C6F0050074D /* Permission.swift */; };
 		D580BDAE2B9A728D0050074D /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDAD2B9A728D0050074D /* AppearanceSettingsView.swift */; };
+		D580BDB12B9B18110050074D /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDB02B9B18110050074D /* OverviewView.swift */; };
+		D580BDB32B9B7C3B0050074D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDB22B9B7C3B0050074D /* AudioManager.swift */; };
+		D580BDB52B9B7F7E0050074D /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = D580BDB42B9B7F7E0050074D /* button_click.wav */; };
+		D580BDB82B9B824A0050074D /* clear_trash.wav in Resources */ = {isa = PBXBuildFile; fileRef = D580BDB72B9B824A0050074D /* clear_trash.wav */; };
+		D580BDBA2B9B90BB0050074D /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDB92B9B90BB0050074D /* Printer.swift */; };
+		D580BDBD2B9BB1160050074D /* SystemPrinterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDBC2B9BB1160050074D /* SystemPrinterRow.swift */; };
 		D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589806F2B91377600D3EBEB /* CaterpieApp.swift */; };
 		D58980722B91377600D3EBEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980712B91377600D3EBEB /* ContentView.swift */; };
 		D58980742B91377700D3EBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980732B91377700D3EBEB /* Assets.xcassets */; };
@@ -44,6 +50,12 @@
 		D580BDA12B9A1C6F0050074D /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		D580BDA72B9A60490050074D /* localization_info.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = localization_info.md; sourceTree = "<group>"; };
 		D580BDAD2B9A728D0050074D /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		D580BDB02B9B18110050074D /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		D580BDB22B9B7C3B0050074D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		D580BDB42B9B7F7E0050074D /* button_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_click.wav; sourceTree = "<group>"; };
+		D580BDB72B9B824A0050074D /* clear_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clear_trash.wav; sourceTree = "<group>"; };
+		D580BDB92B9B90BB0050074D /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		D580BDBC2B9BB1160050074D /* SystemPrinterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPrinterRow.swift; sourceTree = "<group>"; };
 		D589806C2B91377600D3EBEB /* Caterpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caterpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589806F2B91377600D3EBEB /* CaterpieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieApp.swift; sourceTree = "<group>"; };
 		D58980712B91377600D3EBEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +121,7 @@
 		D580BD9B2B9A1A230050074D /* PrinterSettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				D580BDBB2B9BB0E30050074D /* Components */,
 				D580BD9C2B9A1A460050074D /* PrinterSettingsView.swift */,
 			);
 			path = PrinterSettingsView;
@@ -139,6 +152,31 @@
 			path = AppearanceSettingsView;
 			sourceTree = "<group>";
 		};
+		D580BDAF2B9B17FA0050074D /* OverviewView */ = {
+			isa = PBXGroup;
+			children = (
+				D580BDB02B9B18110050074D /* OverviewView.swift */,
+			);
+			path = OverviewView;
+			sourceTree = "<group>";
+		};
+		D580BDB62B9B7F8A0050074D /* audioSRC */ = {
+			isa = PBXGroup;
+			children = (
+				D580BDB72B9B824A0050074D /* clear_trash.wav */,
+				D580BDB42B9B7F7E0050074D /* button_click.wav */,
+			);
+			path = audioSRC;
+			sourceTree = "<group>";
+		};
+		D580BDBB2B9BB0E30050074D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D580BDBC2B9BB1160050074D /* SystemPrinterRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D58980632B91377600D3EBEB = {
 			isa = PBXGroup;
 			children = (
@@ -158,8 +196,10 @@
 		D589806E2B91377600D3EBEB /* Caterpie */ = {
 			isa = PBXGroup;
 			children = (
-				D58980A62B91E08000D3EBEB /* Info.plist */,
 				D580BD8B2B993D090050074D /* Localization */,
+				D580BDB62B9B7F8A0050074D /* audioSRC */,
+				D580BDAF2B9B17FA0050074D /* OverviewView */,
+				D58980A62B91E08000D3EBEB /* Info.plist */,
 				D580BDA82B9A6ED90050074D /* Settings */,
 				D580BD8E2B99D5D90050074D /* MainView */,
 				D58980A72B91ECEB00D3EBEB /* DataModels */,
@@ -189,6 +229,7 @@
 				D58980A12B91DB0800D3EBEB /* BluetoothManager.swift */,
 				D58980AA2B9210E100D3EBEB /* PrinterManager.swift */,
 				D580BD882B9929040050074D /* ColorManager.swift */,
+				D580BDB22B9B7C3B0050074D /* AudioManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -208,6 +249,7 @@
 				D580BDA02B9A1C570050074D /* Enums */,
 				D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */,
 				D580BD9E2B9A1BB40050074D /* Employee.swift */,
+				D580BDB92B9B90BB0050074D /* Printer.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -272,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58980772B91377700D3EBEB /* Preview Assets.xcassets in Resources */,
+				D580BDB82B9B824A0050074D /* clear_trash.wav in Resources */,
+				D580BDB52B9B7F7E0050074D /* button_click.wav in Resources */,
 				D58980742B91377700D3EBEB /* Assets.xcassets in Resources */,
 				D580BD8D2B993D510050074D /* Localizable.xcstrings in Resources */,
 			);
@@ -290,7 +334,9 @@
 				D580BD932B99FD380050074D /* MainScreenViewModel.swift in Sources */,
 				D580BD912B99D60E0050074D /* MainScreenView.swift in Sources */,
 				D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */,
+				D580BDBA2B9B90BB0050074D /* Printer.swift in Sources */,
 				D58980A52B91DB8100D3EBEB /* BTDeviceChoiceView.swift in Sources */,
+				D580BDB12B9B18110050074D /* OverviewView.swift in Sources */,
 				D58980A22B91DB0800D3EBEB /* BluetoothManager.swift in Sources */,
 				D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */,
 				D580BD9F2B9A1BB40050074D /* Employee.swift in Sources */,
@@ -300,7 +346,9 @@
 				D580BD9A2B9A12CF0050074D /* SubItemView.swift in Sources */,
 				D580BD9D2B9A1A460050074D /* PrinterSettingsView.swift in Sources */,
 				D580BDA22B9A1C6F0050074D /* Permission.swift in Sources */,
+				D580BDBD2B9BB1160050074D /* SystemPrinterRow.swift in Sources */,
 				D58980AB2B9210E100D3EBEB /* PrinterManager.swift in Sources */,
+				D580BDB32B9B7C3B0050074D /* AudioManager.swift in Sources */,
 				D580BDAE2B9A728D0050074D /* AppearanceSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

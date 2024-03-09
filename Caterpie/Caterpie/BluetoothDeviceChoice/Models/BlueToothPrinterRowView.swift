@@ -49,6 +49,28 @@ struct BlueToothPrinterRowView: View {
                     Text("tt_disconnect")
                 }.buttonStyle(.borderedProminent)
                     .padding(.leading, 5)
+                
+                ZStack{
+                    HStack{
+                        Image(systemName: "plus")
+                            .font(.title3)
+                            .padding([.top,.leading], 1)
+                        Text("tt_append")
+                            .font(.title3)
+                            .padding([.top,.leading], 1)
+                            
+                    }
+                    HStack{
+                        Image(systemName: "plus")
+                            .font(.title3)
+                            .foregroundStyle(cm.txtImportant)
+                        Text("tt_append")
+                            .font(.title3)
+                            .foregroundStyle(cm.txtImportant)
+                    }
+                }.onTapGesture {
+                    
+                }
             }else{
                 Button(action:{
                     BluetoothManager.shared.connectDevice(printer.peripheral)

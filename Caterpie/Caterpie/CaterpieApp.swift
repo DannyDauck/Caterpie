@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CaterpieApp: App {
+    
+    @State var vm = MainScreenViewModel(user: Employee(permissions: Permission.allCases))
+    
     var body: some Scene {
         WindowGroup {
-            MainScreenView(vm: MainScreenViewModel(user: Employee(permissions: Permission.allCases)))
+            MainScreenView()
+                .environmentObject(vm)
         }
     }
 }

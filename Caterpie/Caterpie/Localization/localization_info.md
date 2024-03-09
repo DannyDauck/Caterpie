@@ -16,7 +16,8 @@
 <ul>
     <li>tt: translated text, String which has a translation</li>
     <li>h1: String that is capitalized at the beginning in every language supported, main usage for buttons</li>
-    <li>err: err message</li>
+    <li>err: error message</li>
+    <li>warning: warning/alert</li>
     <li>without: not necessary to translate, for excample Caterpie itself</li>
 </ul>
 <br>

@@ -28,4 +28,6 @@ class ColorManager: ObservableObject{
     var menueSubItemBG = LinearGradient(colors: [.white, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)
     var menueSubItemBGInversed = LinearGradient(colors: [.gray, .white], startPoint: .bottomLeading, endPoint: .topTrailing)
     
+    var exceptionGradient = LinearGradient(colors: [.red, .red, .orange, .white, .red], startPoint: .bottomLeading, endPoint: .topTrailing)
+    
 }
