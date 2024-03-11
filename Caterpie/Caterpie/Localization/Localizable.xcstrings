@@ -1,7 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    " ⚠️" : {
+
+    },
+    "⚠️ " : {
+
+    },
     "analyze view" : {
+
+    },
+    "Bluetooth" : {
 
     },
     "Caterpie" : {
@@ -57,6 +69,9 @@
 
     },
     "Settings" : {
+
+    },
+    "test" : {
 
     },
     "tt_append" : {
@@ -201,51 +216,51 @@
       }
     },
     "tt_attention" : {
-        "extractionState" : "manual",
-        "localizations" : {
-            "de" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Achtung"
-                }
-            },
-            "en" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Attention"
-                }
-            },
-            "es" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Atención"
-                }
-            },
-            "fr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Attention"
-                }
-            },
-            "it" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Attenzione"
-                }
-            },
-            "pt" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Atenção"
-                }
-            },
-            "tr" : {
-                "stringUnit" : {
-                    "state" : "translated",
-                    "value" : "Dikkat"
-                }
-            }
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achtung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attention"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atención"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attention"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attenzione"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atenção"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dikkat"
+          }
         }
+      }
     },
     "tt_BT-Printer" : {
       "extractionState" : "manual",
@@ -670,6 +685,53 @@
         }
       }
     },
+    "tt_h1_devices" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geräte"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devices"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dispositivos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appareils"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dispositivi"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dispositivos"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cihazlar"
+          }
+        }
+      }
+    },
     "tt_h1_overview" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -760,6 +822,53 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yazıcı"
+          }
+        }
+      }
+    },
+    "tt_h1_printer_settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Druckereinstellungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printer settings"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuración de impresora"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres de l'imprimante"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni della stampante"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações da impressora"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazıcı ayarları"
           }
         }
       }
@@ -951,6 +1060,53 @@
         }
       }
     },
+    "tt_no_device_chosen" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Gerät ausgewählt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No device chosen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ningún dispositivo seleccionado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun appareil sélectionné"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun dispositivo selezionato"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum dispositivo selecionado"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seçilen cihaz yok"
+          }
+        }
+      }
+    },
     "tt_print" : {
       "localizations" : {
         "de" : {
@@ -993,6 +1149,53 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "yazdır"
+          }
+        }
+      }
+    },
+    "tt_printer_need_to_be_configured" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Drucker muss konfiguriert werden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printer needs to be configured"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La impresora necesita ser configurada"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'imprimante doit être configurée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La stampante deve essere configurata"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A impressora precisa ser configurada"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazıcı yapılandırılmalıdır"
           }
         }
       }
@@ -1137,6 +1340,9 @@
           }
         }
       }
+    },
+    "WLAN & Wired" : {
+
     }
   },
   "version" : "1.0"

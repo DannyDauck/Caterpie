@@ -25,6 +25,8 @@
 		D580BDB82B9B824A0050074D /* clear_trash.wav in Resources */ = {isa = PBXBuildFile; fileRef = D580BDB72B9B824A0050074D /* clear_trash.wav */; };
 		D580BDBA2B9B90BB0050074D /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDB92B9B90BB0050074D /* Printer.swift */; };
 		D580BDBD2B9BB1160050074D /* SystemPrinterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDBC2B9BB1160050074D /* SystemPrinterRow.swift */; };
+		D580BDBF2B9D2C450050074D /* BluetoothPrinterSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDBE2B9D2C450050074D /* BluetoothPrinterSettingsView.swift */; };
+		D580BDC22B9D320B0050074D /* BluetoothPrinterSettingsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDC12B9D320B0050074D /* BluetoothPrinterSettingsViewmodel.swift */; };
 		D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589806F2B91377600D3EBEB /* CaterpieApp.swift */; };
 		D58980722B91377600D3EBEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980712B91377600D3EBEB /* ContentView.swift */; };
 		D58980742B91377700D3EBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980732B91377700D3EBEB /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		D580BDB72B9B824A0050074D /* clear_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clear_trash.wav; sourceTree = "<group>"; };
 		D580BDB92B9B90BB0050074D /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		D580BDBC2B9BB1160050074D /* SystemPrinterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPrinterRow.swift; sourceTree = "<group>"; };
+		D580BDBE2B9D2C450050074D /* BluetoothPrinterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinterSettingsView.swift; sourceTree = "<group>"; };
+		D580BDC12B9D320B0050074D /* BluetoothPrinterSettingsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinterSettingsViewmodel.swift; sourceTree = "<group>"; };
 		D589806C2B91377600D3EBEB /* Caterpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caterpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589806F2B91377600D3EBEB /* CaterpieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieApp.swift; sourceTree = "<group>"; };
 		D58980712B91377600D3EBEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,9 +176,19 @@
 		D580BDBB2B9BB0E30050074D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D580BDC02B9D2F8B0050074D /* BluetoothPrinterSettings */,
 				D580BDBC2B9BB1160050074D /* SystemPrinterRow.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D580BDC02B9D2F8B0050074D /* BluetoothPrinterSettings */ = {
+			isa = PBXGroup;
+			children = (
+				D580BDBE2B9D2C450050074D /* BluetoothPrinterSettingsView.swift */,
+				D580BDC12B9D320B0050074D /* BluetoothPrinterSettingsViewmodel.swift */,
+			);
+			path = BluetoothPrinterSettings;
 			sourceTree = "<group>";
 		};
 		D58980632B91377600D3EBEB = {
@@ -330,6 +344,7 @@
 			files = (
 				D58980722B91377600D3EBEB /* ContentView.swift in Sources */,
 				D580BD962B99FDDA0050074D /* MainMenuItem.swift in Sources */,
+				D580BDBF2B9D2C450050074D /* BluetoothPrinterSettingsView.swift in Sources */,
 				D580BD982B9A04830050074D /* MainMenueItemView.swift in Sources */,
 				D580BD932B99FD380050074D /* MainScreenViewModel.swift in Sources */,
 				D580BD912B99D60E0050074D /* MainScreenView.swift in Sources */,
@@ -344,6 +359,7 @@
 				D580BD892B9929040050074D /* ColorManager.swift in Sources */,
 				D58980B02B9459BD00D3EBEB /* BluetoothPrinter.swift in Sources */,
 				D580BD9A2B9A12CF0050074D /* SubItemView.swift in Sources */,
+				D580BDC22B9D320B0050074D /* BluetoothPrinterSettingsViewmodel.swift in Sources */,
 				D580BD9D2B9A1A460050074D /* PrinterSettingsView.swift in Sources */,
 				D580BDA22B9A1C6F0050074D /* Permission.swift in Sources */,
 				D580BDBD2B9BB1160050074D /* SystemPrinterRow.swift in Sources */,

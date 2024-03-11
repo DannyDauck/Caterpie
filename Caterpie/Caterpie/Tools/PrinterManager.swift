@@ -7,6 +7,7 @@
 
 import Foundation
 import Cocoa
+import CoreBluetooth
 
 
 class PrinterManager: ObservableObject {
@@ -14,6 +15,7 @@ class PrinterManager: ObservableObject {
     //building a singleton
     static let shared = PrinterManager()
     @Published var printers: [Printer] = []
+    @Published var btPrinters: [BluetoothPrinter] = []
     
     
     private init(){}
@@ -34,4 +36,14 @@ class PrinterManager: ObservableObject {
             completion(true)
         }
     }
+    
+    func addBTprinter(_ btPrinter: BluetoothPrinter){
+        btPrinters.append(btPrinter)
+    }
+    
+    func forceAppendBTprinter(_ peripheral: CBPeripheral){
+        let printer = BluetoothPrinter(name: peripheral.name ?? "n.a.", identifier: peripheral.identifier, peripheral: peripheral)
+        btPrinters.append(printer)
+    }
+    
 }

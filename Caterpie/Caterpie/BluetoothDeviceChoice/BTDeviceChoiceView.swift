@@ -146,7 +146,9 @@ struct BTDeviceChoiceView: View {
                     title: Text("tt_attention"),
                     message: Text("tt_warning_add_device_to_printers"),
                     primaryButton: .default(Text("tt_h1_understood")){
-                        //TODO add func to PrinterManager to append BT printer
+                        //peripheral can be unwrapped, because the alert only comes up
+                        //when device is connected
+                        PrinterManager.shared.forceAppendBTprinter(currentDevice!)
                     },
                     secondaryButton: .cancel(Text("tt_cancel"))
                 )
