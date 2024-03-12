@@ -47,6 +47,7 @@ struct MainScreenView: View {
                         
                     case 2.1: PrinterSettingsView()
                     case 2.2: AppearanceSettingsView()
+                    case 2.3: ReceiptHeaderSettingsView()
                         
                     default:
                         OverviewView()

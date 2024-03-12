@@ -66,39 +66,7 @@ class BluetoothPrinterSettingsViewmodel: ObservableObject{
             print("Characteristic not found")
             return
         }
-        /*
-        var data = Data()
         
-        
-        let txtCom = "Normal text\n".data(using: .utf8)!
-        let boldTxt = boldText("This text should be bold\n")
-        let largeTxt = "\u{1B}\u{21}\u{30}Your large text here\n\u{1B}\u{21}\u{00}".data(using: .utf8)!
-        let smallText = "\u{1B}\u{4D}\u{01}Your small text here\n\u{1B}\u{4D}\u{00}".data(using: .utf8)!
-
-        // Daten zum Druckdatenstrom hinzufügen
-        data.append(txtCom)
-        data.append(smallText)
-        data.append(boldTxt)
-        data.append(largeTxt)
-        
-        data.append("\u{1B}\u{4D}\u{01}This is text size 1\n\u{1B}\u{4D}\u{00}\u{1B}".data(using: .utf8)!)
-        data.append("\u{21}\u{00}\u{1B}\u{21}\u{30}\u{1B}\u{21}\u{08}Your large bold text here\n\u{1B}\u{21}\u{00}".data(using: .utf8)!)
-        
-      //  let centeredAlignmentCommand = Data([0x1B, 0x61, 0x01])
-        let centeredAlignmentCommand = "\u{1B}a1".data(using: .utf8)!
-        data.append(centeredAlignmentCommand)
-        data.append("\u{1B}\u{21}\u{30}centered large text\n\u{1B}\u{21}\u{00}".data(using: .utf8)!)
-        
-        let rightAlignmentCommand = "\u{1B}a2".data(using: .utf8)!
-        data.append(rightAlignmentCommand)
-        data.append("\u{1B}\u{21}\u{00}right aligment normal text\n\u{1B}\u{21}\u{00}".data(using: .utf8)!)
-        
-        let leftAlignmentCommand = "\u{1B}a0".data(using: .utf8)!
-        data.append(leftAlignmentCommand)
-        data.append("\u{1B}\u{21}\u{00}left aligment normal text\n\u{1B}\u{21}\u{00}".data(using: .utf8)!)
-
-        printer.peripheral.writeValue(data, for: char, type: .withoutResponse)
-         */
         printer.smallText("small text left\n", .left)
         printer.text("normal left\n")
         printer.text("bold normal text center\n", .center, .bold)
@@ -108,13 +76,28 @@ class BluetoothPrinterSettingsViewmodel: ObservableObject{
         printer.largeText("large left bold\n", .left, .bold)
     }
     
-    
-    func boldText(_ string: String) -> Data{
-        let boldOn = "\u{1B}\u{21}\u{08}"
-        let boldOff = "\u{1B}\u{21}\u{00}"
+    func testImagePrint(){
+        let image = NSImage(resource: .minionBanana)
         
-        let data = "\(boldOn)\(string)\(boldOff)".data(using: .utf8)!
-        return data
+        guard let printerImage = ImageConverter().getPrinterImage(image, dpi: printer.dpi, rollSizeMM: printer.printSizeMM, indentationMM: 4) else {
+            return
+        }
+        
+        guard let data = printerImage.representation(using: .bmp, properties: [:]) else {
+            return
+        }
+        
+        guard let char = printer.characteristic else {
+            print("tt_no_characteristic_found")
+            return
+        }
+        
+        var printCommand = Data()
+        
+        printCommand.append("PRINT BITMAP".data(using: .utf8)!)
+        printCommand.append(data)
+        
+        printer.peripheral.writeValue(printCommand, for: char, type: .withoutResponse)
     }
     
 }

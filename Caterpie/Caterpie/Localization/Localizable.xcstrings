@@ -5,18 +5,68 @@
 
     },
     " ⚠️" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "⚠️ " : {
 
     },
     "analyze view" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analyze Ansicht"
+          }
+        }
+      }
+    },
+    "Bild auswählen" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Bild auswählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "choose picture"
+          }
+        }
+      }
     },
     "Bluetooth" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Caterpie" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caterpie"
+          }
+        }
+      }
+    },
+    "Fehler beim Erstellen des Schwarz-Weiß-Bildes" : {
+
+    },
+    "Hello, World!" : {
 
     },
     "I'd like to have a banana split" : {
@@ -65,14 +115,61 @@
         }
       }
     },
+    "Kein Bild ausgewählt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "no picture chosen"
+          }
+        }
+      }
+    },
     "Printer" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drucker"
+          }
+        }
+      }
     },
     "Settings" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
     },
     "test" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
+          }
+        }
+      }
+    },
+    "try image print" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilddruck versucen"
+          }
+        }
+      }
     },
     "tt_append" : {
       "extractionState" : "manual",
@@ -873,6 +970,23 @@
         }
       }
     },
+    "tt_h1_receipt_header_settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bon-Logo-Einstellungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Receipt header settings"
+          }
+        }
+      }
+    },
     "tt_h1_search_for_bluetooth_devices" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1010,6 +1124,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anladım"
+          }
+        }
+      }
+    },
+    "tt_image_header" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image header"
           }
         }
       }
@@ -1294,6 +1425,23 @@
         }
       }
     },
+    "tt_text_header" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Textkopf"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text header"
+          }
+        }
+      }
+    },
     "tt_warning_add_device_to_printers" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1342,7 +1490,20 @@
       }
     },
     "WLAN & Wired" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WLAN & Wired"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WLAN & Wired"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

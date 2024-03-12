@@ -39,8 +39,10 @@ class MainScreenViewModel: ObservableObject{
         if userHasPermission(.settings){
             var settings = MainMenueItem(name: "tt_settings", subItems: [], symbol: "gear")
             if userHasPermission(.peripheralSettings){
-                var item = MainMenueItem(name: "tt_h1_printer", destination: 2.1, symbol: "printer.fill")
+                var item = MainMenueItem(name: "tt_h1_receipt_header_settings", destination: 2.3, symbol: "chart.bar.doc.horizontal")
                 settings.subItems?.append(item)
+                var item2 = MainMenueItem(name: "tt_h1_printer", destination: 2.1, symbol: "printer.fill")
+                settings.subItems?.append(item2)
             }
             if userHasPermission(.themeSettings){
                 var item = MainMenueItem(name: "tt_h1_appearance", destination: 2.2, symbol: "paintbrush.fill")

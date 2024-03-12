@@ -43,6 +43,11 @@ struct BluetoothPrinterSettingsView: View {
             }){
                 Text("test")
             }
+            Button(action: {
+                vm.testImagePrint()
+            }, label: {
+                Text("try image print")
+            })
         }
     }
 }
