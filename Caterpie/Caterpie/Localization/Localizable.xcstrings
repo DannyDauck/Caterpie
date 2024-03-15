@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     " ⚠️" : {
       "localizations" : {
@@ -14,8 +21,35 @@
         }
       }
     },
+    "- 0.5" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "+ 0.5" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "⚠️ " : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "analyze view" : {
       "localizations" : {
@@ -24,14 +58,23 @@
             "state" : "translated",
             "value" : "Analyze Ansicht"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analyze view"
+          }
         }
       }
+    },
+    "apply to printers" : {
+
     },
     "Bild auswählen" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Bild auswählen"
           }
         },
@@ -48,7 +91,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "Bluetooth"
           }
         }
       }
@@ -63,18 +106,90 @@
         }
       }
     },
+    "Characteristic" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CHaracteristic"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characteristic"
+          }
+        }
+      }
+    },
+    "current: %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "derzeit: %@"
+          }
+        }
+      }
+    },
+    "Display name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzeigenname"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "display name"
+          }
+        }
+      }
+    },
+    "DPI" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI"
+          }
+        }
+      }
+    },
     "Fehler beim Erstellen des Schwarz-Weiß-Bildes" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Hello, World!" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "I'd like to have a banana split" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "I'd like to have banana split"
           }
         },
         "en" : {
@@ -115,8 +230,30 @@
         }
       }
     },
+    "Image print command" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bild-Duck-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "image print command"
+          }
+        }
+      }
+    },
     "Kein Bild ausgewählt" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Bild ausgewählt"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -131,6 +268,44 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drucker"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "printer"
+          }
+        }
+      }
+    },
+    "Rollsize" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rollenbreite"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rollsize"
+          }
+        }
+      }
+    },
+    "Service" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service"
           }
         }
       }
@@ -157,6 +332,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Test"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "test"
+          }
+        }
+      }
+    },
+    "Threshold" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Threshold"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Threshold"
           }
         }
       }
@@ -312,6 +509,23 @@
         }
       }
     },
+    "tt_apply_changes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Änderungen speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apply changes"
+          }
+        }
+      }
+    },
     "tt_attention" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -355,6 +569,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dikkat"
+          }
+        }
+      }
+    },
+    "tt_bold_txt_command" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fett-Druck-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold text command"
           }
         }
       }
@@ -406,6 +637,22 @@
         }
       }
     },
+    "tt_can_print_image" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kann Bilder drucken?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can print images?"
+          }
+        }
+      }
+    },
     "tt_cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -449,6 +696,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İptal"
+          }
+        }
+      }
+    },
+    "tt_characteristic" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characteristic"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characteristic: "
           }
         }
       }
@@ -500,6 +763,22 @@
         }
       }
     },
+    "tt_cutter_command" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cutter-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cutter command"
+          }
+        }
+      }
+    },
     "tt_disconnect" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -543,6 +822,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "bağlantıyı kes"
+          }
+        }
+      }
+    },
+    "tt_display_name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzeigen Name"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display name"
+          }
+        }
+      }
+    },
+    "tt_dpi" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI"
           }
         }
       }
@@ -1128,6 +1439,22 @@
         }
       }
     },
+    "tt_has_cutter" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hat das Gerät einen Cutter?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "has cutter?"
+          }
+        }
+      }
+    },
     "tt_image_header" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1141,6 +1468,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Image header"
+          }
+        }
+      }
+    },
+    "tt_image_print_command" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bild-Druck-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image print command"
+          }
+        }
+      }
+    },
+    "tt_inverte" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farben invertieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "inverte colors"
+          }
+        }
+      }
+    },
+    "tt_large_txt_command" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Große-Schrift-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Large text command"
           }
         }
       }
@@ -1331,6 +1706,38 @@
         }
       }
     },
+    "tt_rollSize" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rollenbreite"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "roll size"
+          }
+        }
+      }
+    },
+    "tt_service" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service: "
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service: "
+          }
+        }
+      }
+    },
     "tt_settings" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1378,6 +1785,55 @@
         }
       }
     },
+    "tt_small_txt_command" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleine-Ein-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Small text command"
+          }
+        }
+      }
+    },
+    "tt_small_txt_off_command" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleine-Schrift-aus-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Small text off command"
+          }
+        }
+      }
+    },
+    "tt_small_txt_on_command" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleine-Schrift-Ein-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Small text on command"
+          }
+        }
+      }
+    },
     "tt_standard_printer" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1421,6 +1877,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "standart yazıcı"
+          }
+        }
+      }
+    },
+    "tt_text_command" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normaler-Text-Befehl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text command"
           }
         }
       }

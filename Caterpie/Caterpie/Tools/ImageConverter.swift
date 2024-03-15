@@ -10,6 +10,7 @@ import Cocoa
 
 class ImageConverter{
     
+    @Published var array: [UInt8] = []
     func getPrinterImage(_ image: NSImage, dpi: Int, rollSizeMM: Int, indentationMM: Int) -> NSBitmapImageRep?{
         
         guard let sizedBitmap = scaleToPrinterSize(dpi: dpi, rollWidthMM: rollSizeMM, indentationMM: indentationMM, image: image) else {
@@ -52,28 +53,32 @@ class ImageConverter{
         return darkestValue
     }
     
-    func getBlackAndWhiteImage(_ image: NSBitmapImageRep) -> NSBitmapImageRep? {
+    func getBlackAndWhiteImage(_ image: NSBitmapImageRep, threshold: Float = 1.0, inverted: Bool = false) -> NSBitmapImageRep? {
         guard let darkestPixValue = getDarkestValue(image) else {
             print("get darkest value failed")
             return nil
         }
+        
 
         // Erstelle ein Data-Objekt, um die Bilddaten für das Schwarz-Weiß-Bild zu speichern
         var imageData : [[UInt8]] = []
+        array = []
 
         // Iteriere durch jeden Pixel im Originalbild und berechne die Helligkeit
         for i in 0..<image.pixelsHigh {
             var row: [UInt8] = []
             for j in 0..<image.pixelsWide {
-                let pixelOffset = (j * image.bytesPerRow) + (i * image.samplesPerPixel)
+                let pixelOffset = (i * image.bytesPerRow) + (j * image.samplesPerPixel)
 
                 let r = Int(image.bitmapData?[pixelOffset] ?? 0)
                 let g = Int(image.bitmapData?[pixelOffset + 1] ?? 0)
                 let b = Int(image.bitmapData?[pixelOffset + 2] ?? 0)
 
                 let sum = r + b + g
+                let black: UInt8 = inverted ? 0xFF : 0x00
+                let white: UInt8 = inverted ? 0x00 : 0xFF
                 if let brightness = UInt8(exactly: sum/3){
-                    row.append(brightness < UInt8(darkestPixValue/2) ? 0x00 : 0xFF)
+                    row.append(brightness < UInt8(Int(Float(darkestPixValue) * threshold/2)) ? black : white)
                 } else {
                     print("tt_err_failed_to_calculate_brighness")
                     continue
@@ -83,9 +88,10 @@ class ImageConverter{
             imageData.append(row)
         }
         
+        var newPrintCommand = [UInt8]("BITMAP 0,0,76,\(imageData.count),1,".utf8)
+        array = newPrintCommand
         
-
-        // Erstelle eine neue NSBitmapImageRep mit den Bilddaten aus dem Data-Objekt
+        
         guard let newImage = createBitmapFromUInt8Array(imageData) else {
            print("failed to get image from data")
             return nil
@@ -155,15 +161,14 @@ class ImageConverter{
     
     
     func createBitmapFromUInt8Array(_ data: [[UInt8]]) -> NSBitmapImageRep? {
-        // Überprüfe, ob die Eingabedaten nicht leer sind
+        
         guard !data.isEmpty, !data[0].isEmpty else { return nil }
         
-        let width = data[0].count
-        let height = data.count
+        let width = data[0].count //width anhand der Größe des ersten Arrays in data bestimmen
+        let height = data.count  // Höhe anhand der rows, also der Anzahl an Arrays bestimmen die in getBlackAndWhiteImage hinzugefügt werden bestimmen
         
-        print(width)
-        print(height)
-        // Erstelle eine neue NSBitmapImageRep mit den angegebenen Abmessungen und Eigenschaften
+        
+        
         guard let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil,
                                             pixelsWide: width,
                                             pixelsHigh: height,
@@ -177,7 +182,6 @@ class ImageConverter{
             return nil
         }
         
-        // Daten aus dem Array kopieren
         for row in 0..<height {
                 for pixel in 0..<width {
                     let pixelValue = data[row][pixel]

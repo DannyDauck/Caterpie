@@ -14,8 +14,8 @@
             filePath = "Caterpie/Tools/ImageConverter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "createBitmapFromUInt8Array(_:)"
             landmarkType = "7">
          </BreakpointContent>

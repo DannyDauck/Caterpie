@@ -4,7 +4,7 @@
 //
 //  Created by Danny Dauck on 07.03.24.
 //
-//    appuuid111111111:moduluuid2222222222:useruuid33333333 trial qrc
+
 import SwiftUI
 
 struct PrinterSettingsView: View {
@@ -66,7 +66,8 @@ struct PrinterSettingsView: View {
                         }
                         if btPrinter != nil || printer != nil {
                             switch selection{
-                            case "Bluetooth" : BluetoothPrinterSettingsView(btPrinter!.identifier)
+                            case "Bluetooth" : BluetoothPrinterSettingsView(vm: BluetoothPrinterSettingsViewmodel(printer: btPrinter!))
+                                    .frame(height: geo.size.height / 2.5)
                                 
                             default : Text("tt_no_device_chosen")
                             }

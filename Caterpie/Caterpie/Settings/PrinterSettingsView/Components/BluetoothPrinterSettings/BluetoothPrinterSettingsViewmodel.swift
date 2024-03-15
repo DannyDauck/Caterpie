@@ -7,31 +7,50 @@
 
 import Foundation
 import SwiftUI
+import CoreBluetooth
 
 class BluetoothPrinterSettingsViewmodel: ObservableObject{
     
-    let printerID: UUID
     let pm = PrinterManager.shared
     let bt = BluetoothManager.shared
-    var printer: BluetoothPrinter
+    @Published var printer: BluetoothPrinter
     
-    init(printerID: UUID) {
-        self.printerID = printerID
-        self.printer = pm.btPrinters.filter({
-            $0.identifier == printerID
-        }).first!
+    init(printer: BluetoothPrinter) {
+        self.printer = printer
     }
     
     @Published var displayName = ""
-    @Published var rollSize: Int = 0
-    @Published var dpi: Int = 100
+    private var rollSize: Int = 60
+    private var dpi: Int = 100
     @Published var hasCutter: Bool = false
     @Published var serviceUUID: String = ""
     @Published var characteric: String = ""
     @Published var canPrintImages: Bool = false
     @Published var imageCommand: String = ""
+    @Published var txtCommand: String = ""
+    @Published var bigTxtCommand: String = ""
+    @Published var boldTextCommand: String = ""
     @Published var smallTextOn = ""
+    @Published var smallTxtOff = ""
+    @Published var cutterCommand = ""
     
+    
+    
+    @Published var dpiTxt: String = "100"{
+        didSet{
+            if let newValue = Int(dpiTxt){
+                dpi = newValue
+            }
+        }
+    }
+    
+    @Published var rollSizeTxt: String = "60"{
+        didSet{
+            if let newValue = Int(rollSizeTxt){
+                rollSize = newValue
+            }
+        }
+    }
     
     func setUpPrinterWithDefaults(){
         
@@ -53,6 +72,15 @@ class BluetoothPrinterSettingsViewmodel: ObservableObject{
         
 
         imageCommand = printer.imagePrintCommand
+        txtCommand = printer.normalTextCommand
+        bigTxtCommand = printer.largeTextCommand
+        boldTextCommand = printer.boldTextCommand
+        smallTextOn = printer.smallTextCommand
+        smallTxtOff = printer.smallTextOffCommand
+        cutterCommand = printer.cutterCommand
+        rollSizeTxt = String(rollSize)
+        dpiTxt = String(dpi)
+        
         
     }
     
@@ -74,30 +102,46 @@ class BluetoothPrinterSettingsViewmodel: ObservableObject{
         printer.smallText("small center bold\n", .center, .bold)
         printer.text("right normal\n", .right)
         printer.largeText("large left bold\n", .left, .bold)
+        
     }
     
     func testImagePrint(){
-        let image = NSImage(resource: .minionBanana)
         
-        guard let printerImage = ImageConverter().getPrinterImage(image, dpi: printer.dpi, rollSizeMM: printer.printSizeMM, indentationMM: 4) else {
-            return
+        printer.printImage()
+        
+    }
+    
+    func savePrinter(){
+        
+        var newBT = BluetoothPrinter(name: printer.name, identifier: printer.identifier, peripheral: printer.peripheral)
+        newBT.displayName = displayName
+        newBT.printSizeMM = rollSize
+        newBT.dpi = dpi
+
+        newBT.hasCutter = hasCutter
+        newBT.service = CBUUID(string: serviceUUID)
+        BluetoothManager.shared.connectDevice(newBT.peripheral)
+        newBT.characteristic = newBT.peripheral.services?.first(where: {$0.uuid.uuidString == serviceUUID})?.characteristics?.first(where: {$0.uuid.uuidString == characteric})
+        newBT.imagePrinter = canPrintImages
+
+        newBT.imagePrintCommand = imageCommand
+        newBT.normalTextCommand = txtCommand
+        newBT.largeTextCommand = bigTxtCommand
+        newBT.boldTextCommand = boldTextCommand
+        newBT.smallTextCommand = smallTextOn
+        newBT.smallTextOffCommand = smallTxtOff
+        newBT.cutterCommand = cutterCommand
+        
+        
+
+        if let index = pm.btPrinters.firstIndex(where: { $0.identifier == newBT.identifier }) {
+            pm.btPrinters[index] = newBT
+            printer = pm.btPrinters[index]
+            loadPrinterSettings()
+            print("change printer succeed")
+        } else {
+            pm.btPrinters.append(newBT)
         }
-        
-        guard let data = printerImage.representation(using: .bmp, properties: [:]) else {
-            return
-        }
-        
-        guard let char = printer.characteristic else {
-            print("tt_no_characteristic_found")
-            return
-        }
-        
-        var printCommand = Data()
-        
-        printCommand.append("PRINT BITMAP".data(using: .utf8)!)
-        printCommand.append(data)
-        
-        printer.peripheral.writeValue(printCommand, for: char, type: .withoutResponse)
     }
     
 }

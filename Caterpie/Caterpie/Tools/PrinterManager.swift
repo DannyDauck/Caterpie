@@ -46,4 +46,12 @@ class PrinterManager: ObservableObject {
         btPrinters.append(printer)
     }
     
+    func setHeaderData(_ nsImage: NSImage){
+        for index in 0..<btPrinters.count {
+            if btPrinters[index].imagePrinter == true {
+                btPrinters[index].setHeaderData(nsImage)
+            }
+        }
+    }
+    
 }
