@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct CaterpieApp: App {
-    
-    @State var vm = MainScreenViewModel(user: Employee(permissions: Permission.allCases))
+    @State var vm = MainScreenViewModel()
+    init(){
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
         WindowGroup {
-            MainScreenView()
+            SplashScreenView()
                 .environmentObject(vm)
+             
         }
     }
 }
+
+

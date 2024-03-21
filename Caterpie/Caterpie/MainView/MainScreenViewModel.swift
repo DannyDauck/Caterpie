@@ -10,9 +10,24 @@ import SwiftUI
 
 class MainScreenViewModel: ObservableObject{
     
+    enum LogState{
+        case logged, unregisterd, loggedWithoutFinishingRegistration
+    }
+    
     @Published var menueItems: [MainMenueItem] = []
     var currentUser: Employee?
+    var store: Store?
+    var fbUser: User?{
+        didSet{
+            if store == nil{
+                logState = .loggedWithoutFinishingRegistration
+            }else{
+                logState = .logged
+            }
+        }
+    }
     @Published var currentViewIndex: Float = 0
+    @Published var logState: LogState = .unregisterd
     
     
     init(user: Employee){
@@ -22,6 +37,7 @@ class MainScreenViewModel: ObservableObject{
     init(){
         currentUser =  nil
         createMenue()
+        
     }
     
     func createMenue(){
@@ -54,10 +70,26 @@ class MainScreenViewModel: ObservableObject{
     
     func userHasPermission(_ permission: Permission) -> Bool{
         if let user = currentUser{
-           return user.permissions.contains(permission)
+            return user.permissions.contains(permission)
         }
         else{
             return false
         }
+    }
+    
+    func logOutFromFirebase(){
+        Task{
+            do{
+                try await RemoteRepository.shared.logOutUser()
+                print("user logged out")
+                print(RemoteRepository.shared.auth)
+            }catch{
+                print(error)
+            }
+        }
+    }
+    
+    func createEmptyFbUser(_ id: String){
+        fbUser = User(id: id, firstName: "", lastName: "", adresse: Adresse(street: "", postalCode: "", city: ""), companyName: "", stores: [])
     }
 }

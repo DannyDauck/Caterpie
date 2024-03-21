@@ -164,6 +164,33 @@
         }
       }
     },
+    "E-Mail" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "email"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
     "Fehler beim Erstellen des Schwarz-Weiß-Bildes" : {
       "localizations" : {
         "de" : {
@@ -179,7 +206,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "Hello, Mars"
           }
         }
       }
@@ -262,6 +289,16 @@
         }
       }
     },
+    "Log in" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login"
+          }
+        }
+      }
+    },
     "Printer" : {
       "localizations" : {
         "de" : {
@@ -326,6 +363,22 @@
         }
       }
     },
+    "Sign up" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign uo"
+          }
+        }
+      }
+    },
     "test" : {
       "localizations" : {
         "de" : {
@@ -364,6 +417,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bilddruck versucen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "try image print"
+          }
+        }
+      }
+    },
+    "tt_adresse" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adresse"
           }
         }
       }
@@ -716,6 +785,36 @@
         }
       }
     },
+    "tt_city" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "city"
+          }
+        }
+      }
+    },
+    "tt_company_info" : {
+
+    },
+    "tt_company_name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmenname"
+          }
+        }
+      }
+    },
     "tt_connect" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1042,6 +1141,47 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : ">>>>>>Dış cihaz için servis bulunamadı"
+          }
+        }
+      }
+    },
+    "tt_general_settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemeine Einstellungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General Settings"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuración general"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni generali"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações gerais"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genel Ayarlar"
           }
         }
       }
@@ -1521,6 +1661,7 @@
       }
     },
     "tt_name" : {
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1531,37 +1672,31 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "name"
+            "value" : "Name"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nombre"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "nom"
+            "value" : "Nombre"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nome"
+            "value" : "Nome"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nome"
+            "value" : "Nome"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ad"
+            "value" : "Ad"
           }
         }
       }
@@ -1609,6 +1744,49 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçilen cihaz yok"
+          }
+        }
+      }
+    },
+    "tt_password" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passwort"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "password"
+          }
+        }
+      }
+    },
+    "tt_phone" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telefonnummer"
+          }
+        }
+      }
+    },
+    "tt_postalcode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postleitzahl"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "postal code"
           }
         }
       }
@@ -1706,6 +1884,73 @@
         }
       }
     },
+    "tt_reg_gd_info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Lade die Caterpie Gonepteryx App auf ein Smartphone und folge den Anweisungen auf dem Bildschirm"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"Download the Caterpie Gonepteryx app onto a smartphone and follow the instructions on the screen.\""
+          }
+        }
+      }
+    },
+    "tt_register_a_gonepterix_device" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registriere ein Gonepteryx Gerät"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register a Gonepteryx device"
+          }
+        }
+      }
+    },
+    "tt_register_info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willkommen bei der Registrierung für Caterpie und danke, dass sie sich für unser Produkt entschieden haben.\n\nDie Registrierung wird etwas Zeit in Anspruch nehmen. Bitte halten sie für die Registrierung ihre Steueridenfikationsnummer bereit.\n\nDenken sie heute und auch in Zukunft bei der Nutzung von Caterpie daran, dass ein Warenwirtschaftssystem umso besser arbeitet, je konkreter die eingepflegten Daten sind und je mehr Informationen bereit gestellt sind."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to the registration process for Caterpie, and thank you for choosing our product.\n\nThe registration will take some time. Please have your tax identification number ready for registration.\n\nRemember, both today and in the future, when using Caterpie, that an inventory management system works best when the inputted data is as specific as possible and when more information is provided"
+          }
+        }
+      }
+    },
+    "tt_repeat_password" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passwort wiederholen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "repeat password"
+          }
+        }
+      }
+    },
     "tt_rollSize" : {
       "localizations" : {
         "de" : {
@@ -1785,6 +2030,23 @@
         }
       }
     },
+    "tt_sign_in_with_email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mit Email anmelden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sign in with email"
+          }
+        }
+      }
+    },
     "tt_small_txt_command" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1830,6 +2092,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Small text on command"
+          }
+        }
+      }
+    },
+    "tt_something_went_wrong_while_sign_in" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etwas ist beim einloggen schiefgelaufen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong while signing in"
           }
         }
       }
@@ -1881,6 +2160,53 @@
         }
       }
     },
+    "tt_store_info" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ladendaten"
+          }
+        }
+      }
+    },
+    "tt_store_name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geschäftsname"
+          }
+        }
+      }
+    },
+    "tt_street" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Straße und Hausnummer"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "street and street number"
+          }
+        }
+      }
+    },
+    "tt_tax_id" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steueridentifikationsnummer"
+          }
+        }
+      }
+    },
     "tt_text_command" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1911,6 +2237,47 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Text header"
+          }
+        }
+      }
+    },
+    "tt_user_info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzerinformationen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User Information"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información del usuario"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni utente"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informações do usuário"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanıcı Bilgisi"
           }
         }
       }
@@ -1958,6 +2325,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bu cihazın standart bir yazıcı servisi yok. Eklemek ileri teknik bilgi gerektirebilir."
+          }
+        }
+      }
+    },
+    "tt_weiter" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "weiter"
           }
         }
       }

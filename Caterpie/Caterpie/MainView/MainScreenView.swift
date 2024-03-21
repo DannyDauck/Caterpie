@@ -30,6 +30,25 @@ struct MainScreenView: View {
                         .foregroundStyle(.white)
                 }
                 Spacer()
+                ZStack{
+                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .padding(.leading, 12)
+                        .padding(.top, 5)
+                        .foregroundStyle(.gray)
+                    
+                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .padding(.leading, 10)
+                        .padding(.vertical, 3)
+                        .foregroundStyle(.white)
+                }.padding(.trailing, 10)
+                    .onTapGesture {
+                        vm.logOutFromFirebase()
+                        
+                    }
             }.background(.black)
             Divider()
             GeometryReader{geo in

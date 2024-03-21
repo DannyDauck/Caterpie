@@ -7,8 +7,25 @@
 
 import Foundation
 
-struct Employee{
+struct Employee: Codable{
     
+    
+    var id: String
     var permissions: [Permission] = []
+    var name: String
+    var adresse: Adresse
     
+    init(id: String, name: String, adresse: Adresse, permissions: [Permission]){
+        self.id = id
+        self.name = name
+        self.adresse = adresse
+        self.permissions = permissions
+    }
+    
+    init(id: String, name: String, adresse: Adresse){
+        self.id = id
+        self.name = name
+        self.adresse = adresse
+        self.permissions = []
+    }
 }

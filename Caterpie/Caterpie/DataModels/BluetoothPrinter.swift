@@ -38,8 +38,11 @@ struct BluetoothPrinter{
     var imagePrinter: Bool = false
     var grayScale: Int = 1
     
+    var pixelOffsetLeft: Int = 0
+    var pixelOffsetTop: Int = 0
     
-    var imagePrintCommand: String = "SIZE 60 mm,40 mm\nGAP 2 mm,0 mm\nSPEED 5\nDENSITY 8\nSET TEAR ON\nREFERENCE 16,48\nOFFSET 0 mm\nSET RIBBON OFF\nSET RESPONSE ON\nDIRECTION 0\nCLS\nBITMAP 16,32,27,240,1,"
+    
+    var imagePrintCommand: String = ""
     var headerData: NSBitmapImageRep? = nil
     var imageUIntArray: [UInt8] = []
     var imageData = Data()
@@ -69,6 +72,7 @@ struct BluetoothPrinter{
         self.characteristic = characteristic
         self.identifier = identifier
         self.peripheral = peripheral
+        self.imagePrintCommand = "BITMAP \(pixelOffsetLeft),\(pixelOffsetTop),\(width/8),\(height),1,"
     }
     init(name: String, identifier: UUID, peripheral: CBPeripheral){
         self.name = name
@@ -77,6 +81,7 @@ struct BluetoothPrinter{
         self.characteristic = nil
         self.identifier = identifier
         self.peripheral = peripheral
+        self.imagePrintCommand = "BITMAP \(pixelOffsetLeft),\(pixelOffsetTop),\(width/8),\(height),1,"
     }
     
     func disconnect(){
@@ -169,7 +174,7 @@ struct BluetoothPrinter{
     
     func printImageWithTSPL(imageData: Data) {
         // Generieren Sie den TSPL-Befehl zum Drucken des Bildes
-        let tsplCommand = "BITMAP 0,0,\(width / 8),\(height),1,".data(using: .utf8)!
+        let tsplCommand = imagePrintCommand.data(using: .utf8)!
         peripheral.writeValue(tsplCommand, for: characteristic!, type: .withoutResponse)
         var printData = Data()
         printData.append(imageData)
@@ -179,47 +184,27 @@ struct BluetoothPrinter{
         peripheral.writeValue(printData , for: characteristic!, type: .withResponse)
     }
     
-    mutating func getImageHeaderData(_ nsBitmapRep: NSBitmapImageRep, _ indentationMM: Int = 4, success: @escaping (Bool)->()){
-        
-        guard let cgImage = nsBitmapRep.cgImage else {
-            success(false)
-            return
-        }
-        
-        let targetWidth = self.printSizeMM - (2 * indentationMM)
-        let targetHeight = Double(nsBitmapRep.pixelsHigh) * (Double(targetWidth) / Double(nsBitmapRep.pixelsWide))
-        let pixelWidth = Int(Double(targetWidth) / 25.4 * Double(self.dpi))
-        let pixelHeight = Int(targetHeight / 25.4 * Double(self.dpi))
-        
-        let newRect = NSRect(origin: .zero, size: CGSize(width: pixelWidth, height: pixelHeight))
-        let newBitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(pixelWidth), pixelsHigh: Int(pixelHeight), bitsPerSample: 8, samplesPerPixel: 1, hasAlpha: false, isPlanar: false, colorSpaceName: .deviceWhite, bytesPerRow: 0, bitsPerPixel: 0)
-        
-        NSGraphicsContext.saveGraphicsState()
-        NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: newBitmap!)
-        NSGraphicsContext.current?.imageInterpolation = .high
-        
-        NSGraphicsContext.current?.cgContext.draw(cgImage, in: newRect, byTiling: false)
-        
-        NSGraphicsContext.restoreGraphicsState()
-        
-        self.headerData = newBitmap
-        success(true)
-    }
-    
     mutating func setNormalTextCommand(_ string: String){
         self.normalTextCommand = string
     }
     
-    mutating func setHeaderData(_ nsImage: NSImage){
-        guard let printerBitmap = ImageConverter().scaleToPrinterSize(dpi: dpi, rollWidthMM: printSizeMM, indentationMM: 4, image: nsImage) else{
+    mutating func setHeaderData(_ nsImage: NSImage, indentation: Int = 4){
+        let imageConverter = ImageConverter()
+        guard let printerBitmap = imageConverter.scaleToPrinterSize(dpi: dpi, rollWidthMM: printSizeMM, indentationMM: indentation, image: nsImage) else{
             print("Could not scale Image")
             return
         }
-        let imageConverter = ImageConverter()
+        
         guard let bwImage = imageConverter.getBlackAndWhiteImage(printerBitmap) else {
             print("Could not get black and white image for printer")
             return
         }
+        
+        //calculate offset
+        let pixelPerMM = Int(Double(dpi)/25.4) //25.4 millimeters == 1 inch
+        pixelOffsetLeft = pixelPerMM * indentation
+        pixelOffsetTop = pixelOffsetLeft
+        
         
         imageUIntArray = imageConverter.array
         imageData.append(bwImage.representation(using: .bmp, properties: [:])!)

@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */; };
+		D5199C502BA9D940001B3967 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D5199C4F2BA9D940001B3967 /* FirebaseFirestore */; };
+		D5199CA32BAB04F9001B3967 /* RegisterFlowViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CA22BAB04F9001B3967 /* RegisterFlowViewmodel.swift */; };
+		D5199CA62BAB073F001B3967 /* GeneralRegisterdataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CA52BAB073F001B3967 /* GeneralRegisterdataView.swift */; };
+		D5199CA92BAB0987001B3967 /* RegisterInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CA82BAB0987001B3967 /* RegisterInformationView.swift */; };
+		D53DC0422BA496DD002725B4 /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DC0412BA496DD002725B4 /* SignInScreenView.swift */; };
+		D53DC0492BA84723002725B4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D53DC0482BA84723002725B4 /* FirebaseAuth */; };
+		D53DC04B2BA84E45002725B4 /* SignInViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DC04A2BA84E45002725B4 /* SignInViewViewModel.swift */; };
+		D53DC04D2BA85013002725B4 /* FirebaseAuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DC04C2BA85013002725B4 /* FirebaseAuthData.swift */; };
+		D53DC04F2BA87B7F002725B4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D53DC04E2BA87B7F002725B4 /* FirebaseStorage */; };
+		D53DC0522BA880BA002725B4 /* RegisterFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DC0512BA880BA002725B4 /* RegisterFlowView.swift */; };
+		D53DC0552BA8811B002725B4 /* RegisterGonepterixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DC0542BA8811B002725B4 /* RegisterGonepterixView.swift */; };
 		D580BD892B9929040050074D /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD882B9929040050074D /* ColorManager.swift */; };
 		D580BD8D2B993D510050074D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D580BD8C2B993D510050074D /* Localizable.xcstrings */; };
 		D580BD912B99D60E0050074D /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BD902B99D60E0050074D /* MainScreenView.swift */; };
@@ -36,7 +47,6 @@
 		D580BDD32BA1D7740050074D /* SettingStringEditorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDD22BA1D7740050074D /* SettingStringEditorRow.swift */; };
 		D580BDD72BA1F0730050074D /* ImageSettingsViewViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580BDD62BA1F0730050074D /* ImageSettingsViewViewmodel.swift */; };
 		D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589806F2B91377600D3EBEB /* CaterpieApp.swift */; };
-		D58980722B91377600D3EBEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980712B91377600D3EBEB /* ContentView.swift */; };
 		D58980742B91377700D3EBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980732B91377700D3EBEB /* Assets.xcassets */; };
 		D58980772B91377700D3EBEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980762B91377700D3EBEB /* Preview Assets.xcassets */; };
 		D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589807F2B9138AC00D3EBEB /* QRCodeView.swift */; };
@@ -44,10 +54,35 @@
 		D58980A52B91DB8100D3EBEB /* BTDeviceChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980A42B91DB8100D3EBEB /* BTDeviceChoiceView.swift */; };
 		D58980AB2B9210E100D3EBEB /* PrinterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980AA2B9210E100D3EBEB /* PrinterManager.swift */; };
 		D58980B02B9459BD00D3EBEB /* BluetoothPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */; };
+		D5989D242BA44937002BEAC4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D5989D232BA44937002BEAC4 /* FirebaseAnalytics */; };
+		D5989D262BA44937002BEAC4 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = D5989D252BA44937002BEAC4 /* FirebaseAnalyticsOnDeviceConversion */; };
+		D5989D282BA44937002BEAC4 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D5989D272BA44937002BEAC4 /* FirebaseAnalyticsSwift */; };
+		D5989D2A2BA44937002BEAC4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = D5989D292BA44937002BEAC4 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		D5989D2C2BA44937002BEAC4 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = D5989D2B2BA44937002BEAC4 /* FirebaseAppCheck */; };
+		D5989D2E2BA44BD7002BEAC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D2D2BA44BD7002BEAC4 /* Store.swift */; };
+		D5989D302BA44CA6002BEAC4 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D2F2BA44CA6002BEAC4 /* Article.swift */; };
+		D5989D322BA44D29002BEAC4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D312BA44D29002BEAC4 /* Product.swift */; };
+		D5989D342BA44D98002BEAC4 /* ArticleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D332BA44D98002BEAC4 /* ArticleDependency.swift */; };
+		D5989D362BA44DF4002BEAC4 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D352BA44DF4002BEAC4 /* Measurement.swift */; };
+		D5989D382BA451D7002BEAC4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D372BA451D7002BEAC4 /* User.swift */; };
+		D5989D3A2BA4529A002BEAC4 /* Adresse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D392BA4529A002BEAC4 /* Adresse.swift */; };
+		D5989D3C2BA45387002BEAC4 /* GonepterixDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D3B2BA45387002BEAC4 /* GonepterixDevice.swift */; };
+		D5989D3F2BA45681002BEAC4 /* RemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D3E2BA45681002BEAC4 /* RemoteRepository.swift */; };
+		D5989D462BA45D9E002BEAC4 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D452BA45D9E002BEAC4 /* SplashScreenView.swift */; };
+		D5989D482BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5989D472BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 */; };
+		D5A912522BA98863005B9C04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5A912512BA98863005B9C04 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothPrinterRowView.swift; sourceTree = "<group>"; };
+		D5199CA22BAB04F9001B3967 /* RegisterFlowViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFlowViewmodel.swift; sourceTree = "<group>"; };
+		D5199CA52BAB073F001B3967 /* GeneralRegisterdataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRegisterdataView.swift; sourceTree = "<group>"; };
+		D5199CA82BAB0987001B3967 /* RegisterInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInformationView.swift; sourceTree = "<group>"; };
+		D53DC0412BA496DD002725B4 /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
+		D53DC04A2BA84E45002725B4 /* SignInViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewViewModel.swift; sourceTree = "<group>"; };
+		D53DC04C2BA85013002725B4 /* FirebaseAuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthData.swift; sourceTree = "<group>"; };
+		D53DC0512BA880BA002725B4 /* RegisterFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFlowView.swift; sourceTree = "<group>"; };
+		D53DC0542BA8811B002725B4 /* RegisterGonepterixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGonepterixView.swift; sourceTree = "<group>"; };
 		D580BD882B9929040050074D /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		D580BD8C2B993D510050074D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D580BD902B99D60E0050074D /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
@@ -78,7 +113,6 @@
 		D580BDD62BA1F0730050074D /* ImageSettingsViewViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSettingsViewViewmodel.swift; sourceTree = "<group>"; };
 		D589806C2B91377600D3EBEB /* Caterpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caterpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589806F2B91377600D3EBEB /* CaterpieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaterpieApp.swift; sourceTree = "<group>"; };
-		D58980712B91377600D3EBEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D58980732B91377700D3EBEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D58980762B91377700D3EBEB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D58980782B91377700D3EBEB /* Caterpie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caterpie.entitlements; sourceTree = "<group>"; };
@@ -88,6 +122,18 @@
 		D58980A62B91E08000D3EBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D58980AA2B9210E100D3EBEB /* PrinterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterManager.swift; sourceTree = "<group>"; };
 		D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPrinter.swift; sourceTree = "<group>"; };
+		D5989D2D2BA44BD7002BEAC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D5989D2F2BA44CA6002BEAC4 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		D5989D312BA44D29002BEAC4 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D5989D332BA44D98002BEAC4 /* ArticleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDependency.swift; sourceTree = "<group>"; };
+		D5989D352BA44DF4002BEAC4 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		D5989D372BA451D7002BEAC4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D5989D392BA4529A002BEAC4 /* Adresse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adresse.swift; sourceTree = "<group>"; };
+		D5989D3B2BA45387002BEAC4 /* GonepterixDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonepterixDevice.swift; sourceTree = "<group>"; };
+		D5989D3E2BA45681002BEAC4 /* RemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepository.swift; sourceTree = "<group>"; };
+		D5989D452BA45D9E002BEAC4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		D5989D472BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SplashScreenCaterpie.mp4; sourceTree = "<group>"; };
+		D5A912512BA98863005B9C04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +141,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5989D282BA44937002BEAC4 /* FirebaseAnalyticsSwift in Frameworks */,
+				D5989D242BA44937002BEAC4 /* FirebaseAnalytics in Frameworks */,
+				D53DC04F2BA87B7F002725B4 /* FirebaseStorage in Frameworks */,
+				D5989D262BA44937002BEAC4 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				D5989D2C2BA44937002BEAC4 /* FirebaseAppCheck in Frameworks */,
+				D5199C502BA9D940001B3967 /* FirebaseFirestore in Frameworks */,
+				D5989D2A2BA44937002BEAC4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				D53DC0492BA84723002725B4 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +161,58 @@
 				D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D5199CA42BAB0709001B3967 /* GeneralRegisterdataView */ = {
+			isa = PBXGroup;
+			children = (
+				D5199CA52BAB073F001B3967 /* GeneralRegisterdataView.swift */,
+			);
+			path = GeneralRegisterdataView;
+			sourceTree = "<group>";
+		};
+		D5199CA72BAB0964001B3967 /* RegisterInformation */ = {
+			isa = PBXGroup;
+			children = (
+				D5199CA82BAB0987001B3967 /* RegisterInformationView.swift */,
+			);
+			path = RegisterInformation;
+			sourceTree = "<group>";
+		};
+		D53DC0402BA496C1002725B4 /* SignInScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				D53DC0412BA496DD002725B4 /* SignInScreenView.swift */,
+				D53DC04A2BA84E45002725B4 /* SignInViewViewModel.swift */,
+			);
+			path = SignInScreenView;
+			sourceTree = "<group>";
+		};
+		D53DC0472BA84723002725B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D53DC0502BA8808F002725B4 /* RegisterFlow */ = {
+			isa = PBXGroup;
+			children = (
+				D5199CA72BAB0964001B3967 /* RegisterInformation */,
+				D5199CA42BAB0709001B3967 /* GeneralRegisterdataView */,
+				D53DC0532BA880EF002725B4 /* RegisterGoneptherixDeviceView */,
+				D53DC0512BA880BA002725B4 /* RegisterFlowView.swift */,
+				D5199CA22BAB04F9001B3967 /* RegisterFlowViewmodel.swift */,
+			);
+			path = RegisterFlow;
+			sourceTree = "<group>";
+		};
+		D53DC0532BA880EF002725B4 /* RegisterGoneptherixDeviceView */ = {
+			isa = PBXGroup;
+			children = (
+				D53DC0542BA8811B002725B4 /* RegisterGonepterixView.swift */,
+			);
+			path = RegisterGoneptherixDeviceView;
 			sourceTree = "<group>";
 		};
 		D580BD8B2B993D090050074D /* Localization */ = {
@@ -259,6 +365,7 @@
 			children = (
 				D589806E2B91377600D3EBEB /* Caterpie */,
 				D589806D2B91377600D3EBEB /* Products */,
+				D53DC0472BA84723002725B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,17 +380,22 @@
 		D589806E2B91377600D3EBEB /* Caterpie */ = {
 			isa = PBXGroup;
 			children = (
+				D5A912512BA98863005B9C04 /* GoogleService-Info.plist */,
+				D58980A62B91E08000D3EBEB /* Info.plist */,
+				D53DC0502BA8808F002725B4 /* RegisterFlow */,
+				D53DC0402BA496C1002725B4 /* SignInScreenView */,
+				D5989D422BA45C99002BEAC4 /* SplashScreen */,
+				D5989D402BA45C3A002BEAC4 /* videoSRC */,
 				D580BD8B2B993D090050074D /* Localization */,
+				D5989D3D2BA45656002BEAC4 /* Repositories */,
 				D580BDB62B9B7F8A0050074D /* audioSRC */,
 				D580BDAF2B9B17FA0050074D /* OverviewView */,
-				D58980A62B91E08000D3EBEB /* Info.plist */,
 				D580BDA82B9A6ED90050074D /* Settings */,
 				D580BD8E2B99D5D90050074D /* MainView */,
 				D58980A72B91ECEB00D3EBEB /* DataModels */,
 				D58980A32B91DB4B00D3EBEB /* BluetoothDeviceChoice */,
 				D589807E2B91388E00D3EBEB /* Tools */,
 				D589806F2B91377600D3EBEB /* CaterpieApp.swift */,
-				D58980712B91377600D3EBEB /* ContentView.swift */,
 				D58980732B91377700D3EBEB /* Assets.xcassets */,
 				D58980782B91377700D3EBEB /* Caterpie.entitlements */,
 				D58980752B91377700D3EBEB /* Preview Content */,
@@ -328,8 +440,41 @@
 				D58980AF2B9459BD00D3EBEB /* BluetoothPrinter.swift */,
 				D580BD9E2B9A1BB40050074D /* Employee.swift */,
 				D580BDB92B9B90BB0050074D /* Printer.swift */,
+				D5989D2D2BA44BD7002BEAC4 /* Store.swift */,
+				D5989D2F2BA44CA6002BEAC4 /* Article.swift */,
+				D5989D312BA44D29002BEAC4 /* Product.swift */,
+				D5989D332BA44D98002BEAC4 /* ArticleDependency.swift */,
+				D5989D352BA44DF4002BEAC4 /* Measurement.swift */,
+				D5989D372BA451D7002BEAC4 /* User.swift */,
+				D5989D392BA4529A002BEAC4 /* Adresse.swift */,
+				D5989D3B2BA45387002BEAC4 /* GonepterixDevice.swift */,
+				D53DC04C2BA85013002725B4 /* FirebaseAuthData.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		D5989D3D2BA45656002BEAC4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D5989D3E2BA45681002BEAC4 /* RemoteRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D5989D402BA45C3A002BEAC4 /* videoSRC */ = {
+			isa = PBXGroup;
+			children = (
+				D5989D472BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 */,
+			);
+			path = videoSRC;
+			sourceTree = "<group>";
+		};
+		D5989D422BA45C99002BEAC4 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D5989D452BA45D9E002BEAC4 /* SplashScreenView.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +493,16 @@
 			dependencies = (
 			);
 			name = Caterpie;
+			packageProductDependencies = (
+				D5989D232BA44937002BEAC4 /* FirebaseAnalytics */,
+				D5989D252BA44937002BEAC4 /* FirebaseAnalyticsOnDeviceConversion */,
+				D5989D272BA44937002BEAC4 /* FirebaseAnalyticsSwift */,
+				D5989D292BA44937002BEAC4 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				D5989D2B2BA44937002BEAC4 /* FirebaseAppCheck */,
+				D53DC0482BA84723002725B4 /* FirebaseAuth */,
+				D53DC04E2BA87B7F002725B4 /* FirebaseStorage */,
+				D5199C4F2BA9D940001B3967 /* FirebaseFirestore */,
+			);
 			productName = Caterpie;
 			productReference = D589806C2B91377600D3EBEB /* Caterpie.app */;
 			productType = "com.apple.product-type.application";
@@ -377,6 +532,10 @@
 				de,
 			);
 			mainGroup = D58980632B91377600D3EBEB;
+			packageReferences = (
+				D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D53DC03B2BA491FD002725B4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = D589806D2B91377600D3EBEB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,6 +551,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58980772B91377700D3EBEB /* Preview Assets.xcassets in Resources */,
+				D5A912522BA98863005B9C04 /* GoogleService-Info.plist in Resources */,
+				D5989D482BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 in Resources */,
 				D580BDB82B9B824A0050074D /* clear_trash.wav in Resources */,
 				D580BDB52B9B7F7E0050074D /* button_click.wav in Resources */,
 				D58980742B91377700D3EBEB /* Assets.xcassets in Resources */,
@@ -406,26 +567,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D58980722B91377600D3EBEB /* ContentView.swift in Sources */,
+				D5989D342BA44D98002BEAC4 /* ArticleDependency.swift in Sources */,
 				D580BDC42B9F1BD30050074D /* ImageConverter.swift in Sources */,
+				D5199CA92BAB0987001B3967 /* RegisterInformationView.swift in Sources */,
+				D53DC04D2BA85013002725B4 /* FirebaseAuthData.swift in Sources */,
 				D580BD962B99FDDA0050074D /* MainMenuItem.swift in Sources */,
+				D5199CA62BAB073F001B3967 /* GeneralRegisterdataView.swift in Sources */,
 				D580BDBF2B9D2C450050074D /* BluetoothPrinterSettingsView.swift in Sources */,
 				D580BD982B9A04830050074D /* MainMenueItemView.swift in Sources */,
 				D580BD932B99FD380050074D /* MainScreenViewModel.swift in Sources */,
+				D5989D322BA44D29002BEAC4 /* Product.swift in Sources */,
 				D580BD912B99D60E0050074D /* MainScreenView.swift in Sources */,
 				D58980702B91377600D3EBEB /* CaterpieApp.swift in Sources */,
+				D53DC0522BA880BA002725B4 /* RegisterFlowView.swift in Sources */,
 				D580BDD32BA1D7740050074D /* SettingStringEditorRow.swift in Sources */,
 				D580BDBA2B9B90BB0050074D /* Printer.swift in Sources */,
+				D5989D462BA45D9E002BEAC4 /* SplashScreenView.swift in Sources */,
 				D58980A52B91DB8100D3EBEB /* BTDeviceChoiceView.swift in Sources */,
 				D580BDB12B9B18110050074D /* OverviewView.swift in Sources */,
+				D5989D302BA44CA6002BEAC4 /* Article.swift in Sources */,
+				D53DC0552BA8811B002725B4 /* RegisterGonepterixView.swift in Sources */,
+				D5989D362BA44DF4002BEAC4 /* Measurement.swift in Sources */,
 				D580BDD72BA1F0730050074D /* ImageSettingsViewViewmodel.swift in Sources */,
 				D58980A22B91DB0800D3EBEB /* BluetoothManager.swift in Sources */,
 				D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */,
 				D580BD9F2B9A1BB40050074D /* Employee.swift in Sources */,
 				D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */,
+				D53DC04B2BA84E45002725B4 /* SignInViewViewModel.swift in Sources */,
 				D580BD892B9929040050074D /* ColorManager.swift in Sources */,
 				D580BDC92BA032690050074D /* ReceiptHeaderSettingsViewmodel.swift in Sources */,
 				D58980B02B9459BD00D3EBEB /* BluetoothPrinter.swift in Sources */,
+				D5989D382BA451D7002BEAC4 /* User.swift in Sources */,
+				D5989D2E2BA44BD7002BEAC4 /* Store.swift in Sources */,
+				D5199CA32BAB04F9001B3967 /* RegisterFlowViewmodel.swift in Sources */,
 				D580BD9A2B9A12CF0050074D /* SubItemView.swift in Sources */,
 				D580BDC22B9D320B0050074D /* BluetoothPrinterSettingsViewmodel.swift in Sources */,
 				D580BDC72BA02F490050074D /* ReceiptHeaderSettingsView.swift in Sources */,
@@ -434,10 +608,14 @@
 				D580BDA22B9A1C6F0050074D /* Permission.swift in Sources */,
 				D580BDBD2B9BB1160050074D /* SystemPrinterRow.swift in Sources */,
 				D58980AB2B9210E100D3EBEB /* PrinterManager.swift in Sources */,
+				D53DC0422BA496DD002725B4 /* SignInScreenView.swift in Sources */,
 				D580BDB32B9B7C3B0050074D /* AudioManager.swift in Sources */,
 				D580BDD02BA036950050074D /* ImagePicker.swift in Sources */,
 				D580BDCE2BA0349C0050074D /* ImageHeaderSettingsView.swift in Sources */,
 				D580BDAE2B9A728D0050074D /* AppearanceSettingsView.swift in Sources */,
+				D5989D3F2BA45681002BEAC4 /* RemoteRepository.swift in Sources */,
+				D5989D3C2BA45387002BEAC4 /* GonepterixDevice.swift in Sources */,
+				D5989D3A2BA4529A002BEAC4 /* Adresse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +755,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Caterpie/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Need bluetooth to connect with printer and handheld devices";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -607,6 +786,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Caterpie/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Need bluetooth to connect with printer and handheld devices";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -644,6 +824,68 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D53DC03B2BA491FD002725B4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5199C4F2BA9D940001B3967 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D53DC0482BA84723002725B4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D53DC04E2BA87B7F002725B4 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		D5989D232BA44937002BEAC4 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D5989D252BA44937002BEAC4 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		D5989D272BA44937002BEAC4 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		D5989D292BA44937002BEAC4 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		D5989D2B2BA44937002BEAC4 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5989D222BA44937002BEAC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D58980642B91377600D3EBEB /* Project object */;
 }
