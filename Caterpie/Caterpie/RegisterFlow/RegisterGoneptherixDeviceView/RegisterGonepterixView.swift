@@ -10,7 +10,8 @@ import SwiftUI
 struct RegisterGonepterixView: View {
     @EnvironmentObject var vm: RegisterFlowViewmodel
     @State var qrcView: QRCodeView? = nil
-    @State var remainingSeconds: String = ""
+    @State var remainingSeconds = 300
+    private var timer: Timer?
     
     var body: some View {
         VStack{
@@ -29,9 +30,9 @@ struct RegisterGonepterixView: View {
         }
     }
     
-    private func startTimer() {
+    private mutating func startTimer() {
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ _ in
             
             remainingSeconds -= 1
             
