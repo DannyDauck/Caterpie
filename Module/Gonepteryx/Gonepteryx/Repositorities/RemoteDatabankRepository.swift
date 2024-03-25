@@ -10,6 +10,8 @@ import FirebaseFirestore
 
 class RemoteDatabankRepository{
     
+    static let shared = RemoteDatabankRepository()
+    
     let store = Firestore.firestore()
     
     func registerDevice(_ qrcString: String) throws{

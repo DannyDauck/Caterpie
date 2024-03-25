@@ -16,7 +16,6 @@ struct QRCodeView: View {
     var body: some View {
         VStack {
             
-            TextField("I'd like to have a banana split", text: $inputString)
             
             if let qrCodeImage = generateQRCodeImage() {
                 Image(nsImage: qrCodeImage)
@@ -27,15 +26,6 @@ struct QRCodeView: View {
                 Text("tt_err_Failed_to_generate_qr_code")
                     .foregroundColor(.red)
             }
-            
-            Button(action: {
-                guard let image = generateQRCodeImage() else {
-                    return
-                }
-            }){
-                
-                Text("tt_print")
-            }.buttonStyle(.borderedProminent)
             
         }
         .padding()

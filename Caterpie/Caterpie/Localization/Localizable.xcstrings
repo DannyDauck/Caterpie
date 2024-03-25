@@ -212,6 +212,7 @@
       }
     },
     "I'd like to have a banana split" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1748,6 +1749,9 @@
         }
       }
     },
+    "tt_open_register_channel" : {
+
+    },
     "tt_password" : {
       "localizations" : {
         "de" : {
@@ -1792,6 +1796,7 @@
       }
     },
     "tt_print" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

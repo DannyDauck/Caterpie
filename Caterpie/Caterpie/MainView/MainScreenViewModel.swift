@@ -70,7 +70,7 @@ class MainScreenViewModel: ObservableObject{
     
     func userHasPermission(_ permission: Permission) -> Bool{
         if let user = currentUser{
-            return user.permissions.contains(permission)
+            return user.permissions.contains(permission.rawValue)
         }
         else{
             return false
@@ -90,6 +90,6 @@ class MainScreenViewModel: ObservableObject{
     }
     
     func createEmptyFbUser(_ id: String){
-        fbUser = User(id: id, firstName: "", lastName: "", adresse: Adresse(street: "", postalCode: "", city: ""), companyName: "", stores: [])
+        fbUser = User(id, companyName: "", companyStreet: "", companyPostalCode: "", companyCity: "", userName: "", userStreet: "", userPostalcode: "", userCity: "")
     }
 }

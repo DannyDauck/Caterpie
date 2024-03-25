@@ -120,12 +120,15 @@ struct GeneralRegisterdataView: View {
             }
             
             HStack{
+                
                 TextField("tt_street", text: $vm.storeStreet)
                     .background(Color.gray.opacity(0.4))
                 Spacer()
             }
             
             HStack{
+                TextField("tt_postalcode", text: $vm.storePostalCode)
+                    .background(Color.gray.opacity(0.4))
                 TextField("tt_city", text: $vm.storeCity)
                     .background(Color.gray.opacity(0.4))
                 Spacer()

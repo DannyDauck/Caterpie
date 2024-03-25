@@ -38,9 +38,7 @@ struct SplashScreenView: View {
                 }
                 
                 if isVideoFinished {
-                    
-                   
-                        
+                   RegisterDeviceScreenView()
                 }
             }
             .onAppear {

@@ -31,6 +31,10 @@ class RegisterFlowViewmodel: ObservableObject{
     @Published var btPrinters: [String] = []
     @Published var registerFlowIndex = 0
     @Published var registerDeviceChannelIsOpen = false
+    @Published var qrcView: QRCodeView? = nil
+    @Published var timer = 300
+    @Published var timerTxt = ""
+    var schedule: Timer? = nil
     private var user: User?
     let repo = RemoteRepository.shared
     
@@ -53,12 +57,25 @@ class RegisterFlowViewmodel: ObservableObject{
         user = newUser
     }
     
-    func openRegisterChannel() -> QRCodeView{
+    func openRegisterChannel(){
         guard let storeID = user?.stores.first?.id else{
             print("no store available")
-            return QRCodeView(inputString: "I'd like to have a bananasplit")
+            return
         }
         registerDeviceChannelIsOpen = true
-        return repo.openRegisterDeviceChannel(storeID: storeID.uuidString)
+        qrcView =  repo.openRegisterDeviceChannel(storeID: storeID.uuidString)
+        
+        schedule = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            
+            self.timer -= 1
+            self.timerTxt = self.timer%60<10  ? "\(self.timer/60):0\(self.timer % 60)" : "\(self.timer/60):\(self.timer % 60)"
+            if self.timer == 0{
+                self.qrcView = nil
+                self.schedule?.invalidate()
+                self.timer = 300
+            }
+        }
+        
+        
     }
 }

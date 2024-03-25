@@ -43,13 +43,7 @@ class RemoteRepository{
         return auth.currentUser!.uid
     }
     
-    func writeUser(_ user: User){
-        do{
-            try store.collection("caterpieUsers").document(user.id).setData(from: user)
-        }catch{
-            print("something went wrong while writing user")
-        }
-    }
+    
     
     
     
@@ -100,6 +94,8 @@ class RemoteRepository{
     
     func upsertUser(_ user: User){
         do{
+            print(auth.currentUser)
+            print(user)
             try store.collection("caterpieUsers").document(user.id).setData(from: user)
         }catch{
             print("couldn't write user to firestore: \(error)")

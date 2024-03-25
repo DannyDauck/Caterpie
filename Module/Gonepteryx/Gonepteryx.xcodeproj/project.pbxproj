@@ -43,6 +43,8 @@
 		D5199C9D2BAAF160001B3967 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199C9C2BAAF160001B3967 /* Measurement.swift */; };
 		D5199C9F2BAAF1A1001B3967 /* ArticleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199C9E2BAAF1A1001B3967 /* ArticleDependency.swift */; };
 		D5199CA12BAAF1BE001B3967 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CA02BAAF1BE001B3967 /* Product.swift */; };
+		D5199CAC2BAED4C7001B3967 /* RegisterDeviceScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CAB2BAED4C7001B3967 /* RegisterDeviceScreenView.swift */; };
+		D5199CAE2BAED611001B3967 /* RegisterDeviceScreenViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CAD2BAED611001B3967 /* RegisterDeviceScreenViewmodel.swift */; };
 		D589808E2B913FE300D3EBEB /* GonepteryxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589808D2B913FE300D3EBEB /* GonepteryxApp.swift */; };
 		D58980902B913FE300D3EBEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589808F2B913FE300D3EBEB /* ContentView.swift */; };
 		D58980922B913FE400D3EBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58980912B913FE400D3EBEB /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		D5199C9C2BAAF160001B3967 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		D5199C9E2BAAF1A1001B3967 /* ArticleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDependency.swift; sourceTree = "<group>"; };
 		D5199CA02BAAF1BE001B3967 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D5199CAB2BAED4C7001B3967 /* RegisterDeviceScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceScreenView.swift; sourceTree = "<group>"; };
+		D5199CAD2BAED611001B3967 /* RegisterDeviceScreenViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceScreenViewmodel.swift; sourceTree = "<group>"; };
 		D589808A2B913FE300D3EBEB /* Gonepteryx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gonepteryx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589808D2B913FE300D3EBEB /* GonepteryxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonepteryxApp.swift; sourceTree = "<group>"; };
 		D589808F2B913FE300D3EBEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,15 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		D5199CAA2BAED4A7001B3967 /* RegisterDeviceScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D5199CAB2BAED4C7001B3967 /* RegisterDeviceScreenView.swift */,
+				D5199CAD2BAED611001B3967 /* RegisterDeviceScreenViewmodel.swift */,
+			);
+			path = RegisterDeviceScreen;
+			sourceTree = "<group>";
+		};
 		D58980812B913FE300D3EBEB = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 		D589808C2B913FE300D3EBEB /* Gonepteryx */ = {
 			isa = PBXGroup;
 			children = (
+				D5199CAA2BAED4A7001B3967 /* RegisterDeviceScreen */,
 				D5199C8C2BAAE620001B3967 /* Datamodels */,
 				D5199C892BAAE5AC001B3967 /* Repositorities */,
 				D5199C862BAAD8B7001B3967 /* videoSrc */,
@@ -328,6 +342,7 @@
 				D5199C9F2BAAF1A1001B3967 /* ArticleDependency.swift in Sources */,
 				D5199C972BAAF0C8001B3967 /* Adresse.swift in Sources */,
 				D589808E2B913FE300D3EBEB /* GonepteryxApp.swift in Sources */,
+				D5199CAC2BAED4C7001B3967 /* RegisterDeviceScreenView.swift in Sources */,
 				D5199C932BAAEA34001B3967 /* Permission.swift in Sources */,
 				D5199C8B2BAAE5DE001B3967 /* RemoteDatabankRepository.swift in Sources */,
 				D5199C992BAAF103001B3967 /* Store.swift in Sources */,
@@ -335,6 +350,7 @@
 				D589809D2B91409500D3EBEB /* QRCodeCam.swift in Sources */,
 				D5199C8E2BAAE635001B3967 /* GonepteryxDevice.swift in Sources */,
 				D5199C852BAAD875001B3967 /* SplashScreenView.swift in Sources */,
+				D5199CAE2BAED611001B3967 /* RegisterDeviceScreenViewmodel.swift in Sources */,
 				D5199C952BAAF07D001B3967 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

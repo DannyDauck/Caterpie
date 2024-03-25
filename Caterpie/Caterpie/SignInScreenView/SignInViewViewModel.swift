@@ -73,7 +73,7 @@ class SignInViewViewModel: ObservableObject{
     
     
     func createEmptyFbUser(_ id: String){
-        let user = User(id: id, firstName: "", lastName: "", adresse: Adresse(street: "", postalCode: "", city: ""), companyName: "", stores: [])
+        let user = User(id, companyName: "", companyStreet: "", companyPostalCode: "", companyCity: "", userName: "", userStreet: "", userPostalcode: "", userCity: "")
         Task{
             RemoteRepository.shared.upsertUser(user)
         }

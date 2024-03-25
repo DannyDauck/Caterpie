@@ -16,10 +16,10 @@ struct QRCCam: View {
     @State private var showingImagePicker = false
     @State private var image: UIImage?
     @State private var qrCodeContent: String?
+    @State var vm = RegisterDeviceScreenViewmodel()
 
     var body: some View {
         VStack {
-            
             if let image = image {
                 Image(uiImage: image)
                     .resizable()
@@ -43,19 +43,12 @@ struct QRCCam: View {
                     
                 }
                 
-                Button(action: {
-                    if let qrCodeImage = generateQRCodeImage(qrCodeContent ?? "I like banana split") {
-                        saveToLibrary(image: qrCodeImage)
-                    }
-                }) {
-                    Text("Bild speichern")
-                }
                 if let qrCodeContent = qrCodeContent {
-                    Text("QR Code Inhalt: \(qrCodeContent)")
+                    
                     Button(action: {
-                        showingImagePicker.toggle()
+                        vm.registerDvice(qrCodeContent)
                     }){
-                        Text("neu")
+                        Text("Jetzt Gerät hinzufügen")
                             .background(Capsule()
                                 .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/))
                             .foregroundColor(.white)
@@ -63,7 +56,7 @@ struct QRCCam: View {
                             .background(Capsule()
                                 .foregroundStyle(LinearGradient(colors: [.white, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
                             .shadow(radius: 4)
-                    }
+                    }.buttonStyle(.borderedProminent)
                 }
             } else {
                 Button("Kamera öffnen") {
@@ -89,6 +82,8 @@ struct QRCCam: View {
         for feature in features {
             if let qrCodeFeature = feature as? CIQRCodeFeature {
                 return qrCodeFeature.messageString
+                
+                
             }
         }
         return nil

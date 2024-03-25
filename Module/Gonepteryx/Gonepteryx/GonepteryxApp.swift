@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct GonepteryxApp: App {
+    
+    init(){
+        FirebaseApp.configure()
+    }
     var body: some Scene {
+        
+        
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
     }
 }

@@ -11,11 +11,11 @@ struct Employee: Codable{
     
     
     var id: String
-    var permissions: [Permission] = []
+    var permissions: [String] = []
     var name: String
     var adresse: Adresse
     
-    init(id: String, name: String, adresse: Adresse, permissions: [Permission]){
+    init(id: String, name: String, adresse: Adresse, permissions: [String]){
         self.id = id
         self.name = name
         self.adresse = adresse
