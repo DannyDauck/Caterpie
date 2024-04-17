@@ -34,6 +34,7 @@ class RegisterFlowViewmodel: ObservableObject{
     @Published var qrcView: QRCodeView? = nil
     @Published var timer = 300
     @Published var timerTxt = ""
+    @Published var firstStoreID = UUID().uuidString
     var schedule: Timer? = nil
     private var user: User?
     let repo = RemoteRepository.shared
@@ -58,12 +59,8 @@ class RegisterFlowViewmodel: ObservableObject{
     }
     
     func openRegisterChannel(){
-        guard let storeID = user?.stores.first?.id else{
-            print("no store available")
-            return
-        }
         registerDeviceChannelIsOpen = true
-        qrcView =  repo.openRegisterDeviceChannel(storeID: storeID.uuidString)
+        qrcView =  repo.openRegisterDeviceChannel(storeID: firstStoreID)
         
         schedule = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             

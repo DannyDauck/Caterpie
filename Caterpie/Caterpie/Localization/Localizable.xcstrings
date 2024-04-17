@@ -51,7 +51,23 @@
         }
       }
     },
+    "25,-€" : {
+
+    },
+    "218,70€" : {
+
+    },
+    "350,-€" : {
+
+    },
+    "918,30€" : {
+
+    },
+    "1288,30€" : {
+
+    },
     "analyze view" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -68,6 +84,12 @@
       }
     },
     "apply to printers" : {
+
+    },
+    "Bar" : {
+
+    },
+    "Benutzer" : {
 
     },
     "Bild auswählen" : {
@@ -132,6 +154,12 @@
         }
       }
     },
+    "Danny" : {
+
+    },
+    "Device 1" : {
+
+    },
     "Display name" : {
       "localizations" : {
         "de" : {
@@ -180,6 +208,9 @@
           }
         }
       }
+    },
+    "EC" : {
+
     },
     "Email" : {
       "localizations" : {
@@ -300,6 +331,9 @@
         }
       }
     },
+    "offene Tische" : {
+
+    },
     "Printer" : {
       "localizations" : {
         "de" : {
@@ -379,6 +413,9 @@
           }
         }
       }
+    },
+    "sonsitge" : {
+
     },
     "test" : {
       "localizations" : {
@@ -2343,6 +2380,9 @@
           }
         }
       }
+    },
+    "Umsazt" : {
+
     },
     "WLAN & Wired" : {
       "localizations" : {

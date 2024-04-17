@@ -21,32 +21,10 @@ struct QRCCam: View {
     var body: some View {
         VStack {
             if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                Button("QR Code auslesen") {
-                    qrCodeContent = readQRCode(from: image)
-                }
-                
-                Button(action: {
-                    PrinterManager.shared.printImage(generateQRCodeImage(qrCodeContent ?? "I like banana split")!)
-                }){
-                    Text("drucken")
-                        .font(.title2)
-                        .foregroundStyle(.white)
-                        .background(Capsule()
-                            .foregroundStyle(LinearGradient(colors: [.blue, .indigo], startPoint: .bottomLeading, endPoint: .topTrailing)))
-                        .padding(3)
-                        .background(Capsule()
-                            .foregroundStyle(LinearGradient(colors: [.white, .gray], startPoint: .topTrailing, endPoint: .bottomLeading)))
-                        .padding(.horizontal, 5)
-                    
-                }
-                
-                if let qrCodeContent = qrCodeContent {
                     
                     Button(action: {
-                        vm.registerDvice(qrCodeContent)
+                        qrCodeContent = readQRCode(from: image) ?? "I'd like to have a bananasplit"
+                        vm.registerDvice(qrCodeContent!)
                     }){
                         Text("Jetzt Gerät hinzufügen")
                             .background(Capsule()
@@ -57,7 +35,6 @@ struct QRCCam: View {
                                 .foregroundStyle(LinearGradient(colors: [.white, .gray], startPoint: .bottomLeading, endPoint: .topTrailing)))
                             .shadow(radius: 4)
                     }.buttonStyle(.borderedProminent)
-                }
             } else {
                 Button("Kamera öffnen") {
                     showingImagePicker.toggle()

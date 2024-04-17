@@ -59,8 +59,8 @@ class MainScreenViewModel: ObservableObject{
                 settings.subItems?.append(item)
                 var item2 = MainMenueItem(name: "tt_h1_printer", destination: 2.1, symbol: "printer.fill")
                 settings.subItems?.append(item2)
-            }
-            if userHasPermission(.themeSettings){
+           }
+           if userHasPermission(.themeSettings){
                 var item = MainMenueItem(name: "tt_h1_appearance", destination: 2.2, symbol: "paintbrush.fill")
                 settings.subItems?.append(item)
             }
@@ -70,10 +70,12 @@ class MainScreenViewModel: ObservableObject{
     
     func userHasPermission(_ permission: Permission) -> Bool{
         if let user = currentUser{
-            return user.permissions.contains(permission.rawValue)
+          //  return user.permissions.contains(permission.rawValue)
+            return true
         }
         else{
-            return false
+          //  return false
+            return true
         }
     }
     

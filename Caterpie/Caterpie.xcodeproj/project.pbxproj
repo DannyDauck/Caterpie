@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D508832B2BCE9BA2009D1E45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D508832A2BCE9BA2009D1E45 /* GoogleService-Info.plist */; };
+		D508832E2BCEA79E009D1E45 /* GonepteryxChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508832D2BCEA79E009D1E45 /* GonepteryxChip.swift */; };
 		D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */; };
 		D5199C502BA9D940001B3967 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D5199C4F2BA9D940001B3967 /* FirebaseFirestore */; };
 		D5199CA32BAB04F9001B3967 /* RegisterFlowViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5199CA22BAB04F9001B3967 /* RegisterFlowViewmodel.swift */; };
@@ -70,10 +72,11 @@
 		D5989D3F2BA45681002BEAC4 /* RemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D3E2BA45681002BEAC4 /* RemoteRepository.swift */; };
 		D5989D462BA45D9E002BEAC4 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5989D452BA45D9E002BEAC4 /* SplashScreenView.swift */; };
 		D5989D482BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D5989D472BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 */; };
-		D5A912522BA98863005B9C04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5A912512BA98863005B9C04 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D508832A2BCE9BA2009D1E45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D508832D2BCEA79E009D1E45 /* GonepteryxChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonepteryxChip.swift; sourceTree = "<group>"; };
 		D51440932B94695200F2A8DE /* BlueToothPrinterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothPrinterRowView.swift; sourceTree = "<group>"; };
 		D5199CA22BAB04F9001B3967 /* RegisterFlowViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFlowViewmodel.swift; sourceTree = "<group>"; };
 		D5199CA52BAB073F001B3967 /* GeneralRegisterdataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRegisterdataView.swift; sourceTree = "<group>"; };
@@ -133,7 +136,6 @@
 		D5989D3E2BA45681002BEAC4 /* RemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepository.swift; sourceTree = "<group>"; };
 		D5989D452BA45D9E002BEAC4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		D5989D472BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SplashScreenCaterpie.mp4; sourceTree = "<group>"; };
-		D5A912512BA98863005B9C04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D508832C2BCEA757009D1E45 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D508832D2BCEA79E009D1E45 /* GonepteryxChip.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D51440922B94692200F2A8DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +292,7 @@
 		D580BDAF2B9B17FA0050074D /* OverviewView */ = {
 			isa = PBXGroup;
 			children = (
+				D508832C2BCEA757009D1E45 /* Components */,
 				D580BDB02B9B18110050074D /* OverviewView.swift */,
 			);
 			path = OverviewView;
@@ -380,7 +391,7 @@
 		D589806E2B91377600D3EBEB /* Caterpie */ = {
 			isa = PBXGroup;
 			children = (
-				D5A912512BA98863005B9C04 /* GoogleService-Info.plist */,
+				D508832A2BCE9BA2009D1E45 /* GoogleService-Info.plist */,
 				D58980A62B91E08000D3EBEB /* Info.plist */,
 				D53DC0502BA8808F002725B4 /* RegisterFlow */,
 				D53DC0402BA496C1002725B4 /* SignInScreenView */,
@@ -551,12 +562,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58980772B91377700D3EBEB /* Preview Assets.xcassets in Resources */,
-				D5A912522BA98863005B9C04 /* GoogleService-Info.plist in Resources */,
 				D5989D482BA4626C002BEAC4 /* SplashScreenCaterpie.mp4 in Resources */,
 				D580BDB82B9B824A0050074D /* clear_trash.wav in Resources */,
 				D580BDB52B9B7F7E0050074D /* button_click.wav in Resources */,
 				D58980742B91377700D3EBEB /* Assets.xcassets in Resources */,
 				D580BD8D2B993D510050074D /* Localizable.xcstrings in Resources */,
+				D508832B2BCE9BA2009D1E45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +602,7 @@
 				D580BDD72BA1F0730050074D /* ImageSettingsViewViewmodel.swift in Sources */,
 				D58980A22B91DB0800D3EBEB /* BluetoothManager.swift in Sources */,
 				D58980802B9138AC00D3EBEB /* QRCodeView.swift in Sources */,
+				D508832E2BCEA79E009D1E45 /* GonepteryxChip.swift in Sources */,
 				D580BD9F2B9A1BB40050074D /* Employee.swift in Sources */,
 				D51440942B94695200F2A8DE /* BlueToothPrinterRowView.swift in Sources */,
 				D53DC04B2BA84E45002725B4 /* SignInViewViewModel.swift in Sources */,

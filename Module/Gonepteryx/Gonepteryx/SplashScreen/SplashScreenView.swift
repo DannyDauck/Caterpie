@@ -18,27 +18,30 @@ struct SplashScreenView: View {
         
         var body: some View {
             ZStack {
-                VideoPlayer(player: player)
-                    .edgesIgnoringSafeArea(.all)
-                    .onAppear {
-                        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
-                            isVideoFinished = true
-                        }
-                    }
-                    .onDisappear {
-                        NotificationCenter.default.removeObserver(self)
-                    }
-                VStack{
-                    Spacer()
-                    HStack{
-                        Spacer()
-                    }.frame(height: 50)
-                        .foregroundStyle(.black)
-                        .background(.black)
-                }
+                
                 
                 if isVideoFinished {
-                   RegisterDeviceScreenView()
+                    
+                    
+                }else{
+                    VideoPlayer(player: player)
+                        .edgesIgnoringSafeArea(.all)
+                        .onAppear {
+                            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
+                                isVideoFinished = true
+                            }
+                        }
+                        .onDisappear {
+                            NotificationCenter.default.removeObserver(self)
+                        }
+                    VStack{
+                        Spacer()
+                        HStack{
+                            Spacer()
+                        }.frame(height: 50)
+                            .foregroundStyle(.black)
+                            .background(.black)
+                    }
                 }
             }
             .onAppear {

@@ -42,7 +42,7 @@ struct QRCodeView: View {
             return nil
         }
 
-        let nsImage = NSImage(cgImage: cgImage, size: NSSize(width: outputImage.extent.width, height: outputImage.extent.height))
+        let nsImage = NSImage(cgImage: cgImage, size: NSSize(width: 400, height: 400))
         return nsImage
     }
 }

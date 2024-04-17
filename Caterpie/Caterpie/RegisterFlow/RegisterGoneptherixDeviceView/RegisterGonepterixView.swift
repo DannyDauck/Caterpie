@@ -19,7 +19,6 @@ struct RegisterGonepterixView: View {
             Text("tt_reg_gd_info")
             if vm.qrcView != nil{
                 vm.qrcView
-                frame(width: 400, height: 400)
                 Text(vm.timerTxt)
                     .font(.title2)
                     .foregroundStyle(ColorManager.shared.txtImportant)

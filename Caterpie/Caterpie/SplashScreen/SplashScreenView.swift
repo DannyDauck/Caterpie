@@ -20,28 +20,11 @@ struct SplashScreenView: View {
         
         var body: some View {
             ZStack {
-                VideoPlayer(player: player)
-                    .edgesIgnoringSafeArea(.all)
-                    .onAppear {
-                        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
-                            isVideoFinished = true
-                        }
-                    }
-                    .onDisappear {
-                        NotificationCenter.default.removeObserver(self)
-                    }
-                VStack{
-                    Spacer()
-                    HStack{
-                        Spacer()
-                    }.frame(height: 200)
-                        .foregroundStyle(.black)
-                        .background(.black)
-                }
+                
                 
                 if isVideoFinished {
                     
-                    //Logik zum überprüfen ob register, login oder mainScreen
+                    /*  Logik zum überprüfen ob register, login oder mainScreen
                     switch mainVm.logState {
                     case .logged:
                         MainScreenView()
@@ -50,6 +33,30 @@ struct SplashScreenView: View {
                     case .loggedWithoutFinishingRegistration:
                         RegisterFlowView()
                             .environmentObject(RegisterFlowViewmodel(id: mainVm.fbUser!.id))
+                        
+                        
+                        //    */        MainScreenView()
+                        
+                    }else{
+                    
+                    VideoPlayer(player: player)
+                        .edgesIgnoringSafeArea(.all)
+                        .onAppear {
+                            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
+                                isVideoFinished = true
+                            }
+                        }
+                        .onDisappear {
+                            NotificationCenter.default.removeObserver(self)
+                        }
+                    
+                    VStack{
+                        Spacer()
+                        HStack{
+                            Spacer()
+                        }.frame(height: 200)
+                            .foregroundStyle(.black)
+                            .background(.black)
                     }
                     
                 }

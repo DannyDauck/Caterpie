@@ -11,4 +11,7 @@ enum Permission: String, Codable, CaseIterable, Hashable{
     
     case settings, peripheralSettings, themeSettings, analyze
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.rawValue)
+    }
 }

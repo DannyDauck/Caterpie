@@ -16,6 +16,7 @@ class RegisterDeviceScreenViewmodel: ObservableObject{
     func registerDvice(_ inputString: String){
         do{
             try repo.registerDevice(inputString)
+            
         }catch{
             print("Could not write data to FireStore")
         }

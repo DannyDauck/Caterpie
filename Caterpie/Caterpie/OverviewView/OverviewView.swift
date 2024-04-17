@@ -9,7 +9,13 @@ import SwiftUI
 
 struct OverviewView: View {
     var body: some View {
-        Text("analyze view")
+        VStack{
+            HStack{
+                GonepteryxChip()
+                Spacer()
+            }
+            Spacer()
+        }.background(.black.opacity(0.4))
     }
 }
 

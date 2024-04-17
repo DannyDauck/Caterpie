@@ -18,6 +18,9 @@ class RemoteRepository{
     
     var auth = FirebaseAuth.Auth.auth()
     let store = Firestore.firestore()
+    var userName: String = ""
+    var userPassword: String = ""
+    
     
     private init(){}
     
@@ -27,6 +30,8 @@ class RemoteRepository{
             let user = try await auth.createUser(withEmail: email, password: password)
             print(">>>>>>>>>>>>>>>>>>>")
             print(auth.currentUser?.uid)
+            userName = email
+            userPassword = password
         }catch{
             print(">>>>error:\(error)")
         }
@@ -89,14 +94,14 @@ class RemoteRepository{
             }
         }
         
-        return QRCodeView(inputString: "user:\(userID),request:\(requestID),storeID:\(storeID)")
+        return QRCodeView(inputString: "userName:\(userName),userPassword:\(userPassword),storeID:\(storeID)")
     }
     
     func upsertUser(_ user: User){
         do{
             print(auth.currentUser)
             print(user)
-            try store.collection("caterpieUsers").document(user.id).setData(from: user)
+            try store.collection("caterpieUsers").document(user.id).collection("stores").document(UUID().uuidString)
         }catch{
             print("couldn't write user to firestore: \(error)")
         }

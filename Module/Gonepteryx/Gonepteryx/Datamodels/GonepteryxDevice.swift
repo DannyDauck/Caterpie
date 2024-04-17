@@ -23,9 +23,8 @@ struct GonepterixDevice: Codable{
         isLoading = batteryStateString()
         isConnected = true
     }
-    
-
 }
+
 
 func batteryStateString() -> String {
     switch UIDevice.current.batteryState {
